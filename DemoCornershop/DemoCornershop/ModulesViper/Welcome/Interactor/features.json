@@ -1,0 +1,22 @@
+{
+    "data" : [
+        {
+            "title" : "Add almost anything",
+            "body" : "Capture cups of lattes, frapuccinos, or anything else that can be counted.",
+            "image" : "42",
+            "color" : "#FF3B30"
+        },
+        {
+            "title" : "Count to self, or with anyone",
+            "body" : "Others can view or make changes. There’s no authentication API.",
+            "image" : "people",
+            "color" : "#FFCC00"
+        },
+        {
+            "title" : "Count your thoughts",
+            "body" : "Possibilities are literally endless.",
+            "image" : "light",
+            "color" : "#4CD964"
+        }
+    ]
+}

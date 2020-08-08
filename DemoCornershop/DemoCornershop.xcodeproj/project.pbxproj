@@ -9,13 +9,23 @@
 /* Begin PBXBuildFile section */
 		9A72D53024DE595700140343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D52F24DE595700140343 /* AppDelegate.swift */; };
 		9A72D53224DE595700140343 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53124DE595700140343 /* SceneDelegate.swift */; };
-		9A72D53424DE595700140343 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53324DE595700140343 /* ViewController.swift */; };
-		9A72D53724DE595700140343 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A72D53524DE595700140343 /* Main.storyboard */; };
 		9A72D53A24DE595700140343 /* DemoCornershop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53824DE595700140343 /* DemoCornershop.xcdatamodeld */; };
 		9A72D53C24DE595A00140343 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A72D53B24DE595A00140343 /* Assets.xcassets */; };
 		9A72D53F24DE595A00140343 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A72D53D24DE595A00140343 /* LaunchScreen.storyboard */; };
 		9A72D54A24DE595A00140343 /* DemoCornershopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D54924DE595A00140343 /* DemoCornershopTests.swift */; };
 		9A72D55524DE595A00140343 /* DemoCornershopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D55424DE595A00140343 /* DemoCornershopUITests.swift */; };
+		9A72D56524DE626600140343 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D56324DE626600140343 /* WelcomeViewController.swift */; };
+		9A72D56624DE626600140343 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A72D56424DE626600140343 /* WelcomeViewController.xib */; };
+		9A72D56E24DE71CE00140343 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D56D24DE71CE00140343 /* WelcomeRouter.swift */; };
+		9A72D57024DE734500140343 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D56F24DE734500140343 /* WelcomePresenter.swift */; };
+		9ABC71B424DE766E0002DF48 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71B324DE766E0002DF48 /* WelcomeInteractor.swift */; };
+		9ABC71B724DE81490002DF48 /* features.json in Resources */ = {isa = PBXBuildFile; fileRef = 9ABC71B624DE81490002DF48 /* features.json */; };
+		9ABC71B924DE87CA0002DF48 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71B824DE87CA0002DF48 /* Feature.swift */; };
+		9ABC71BE24DE8AED0002DF48 /* FeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71BC24DE8AED0002DF48 /* FeatureTableViewCell.swift */; };
+		9ABC71BF24DE8AED0002DF48 /* FeatureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ABC71BD24DE8AED0002DF48 /* FeatureTableViewCell.xib */; };
+		9ABC71C224DE8D500002DF48 /* extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71C124DE8D500002DF48 /* extension+UIColor.swift */; };
+		9ABC71C424DE94D30002DF48 /* CornershopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71C324DE94D30002DF48 /* CornershopView.swift */; };
+		9ABC71C624DE95630002DF48 /* CornershopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71C524DE95630002DF48 /* CornershopButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +49,6 @@
 		9A72D52C24DE595700140343 /* DemoCornershop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCornershop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A72D52F24DE595700140343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A72D53124DE595700140343 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9A72D53324DE595700140343 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9A72D53624DE595700140343 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A72D53924DE595700140343 /* DemoCornershop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DemoCornershop.xcdatamodel; sourceTree = "<group>"; };
 		9A72D53B24DE595A00140343 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A72D53E24DE595A00140343 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +59,18 @@
 		9A72D55024DE595A00140343 /* DemoCornershopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoCornershopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A72D55424DE595A00140343 /* DemoCornershopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCornershopUITests.swift; sourceTree = "<group>"; };
 		9A72D55624DE595A00140343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A72D56324DE626600140343 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		9A72D56424DE626600140343 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		9A72D56D24DE71CE00140343 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
+		9A72D56F24DE734500140343 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		9ABC71B324DE766E0002DF48 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		9ABC71B624DE81490002DF48 /* features.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = features.json; sourceTree = "<group>"; };
+		9ABC71B824DE87CA0002DF48 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		9ABC71BC24DE8AED0002DF48 /* FeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTableViewCell.swift; sourceTree = "<group>"; };
+		9ABC71BD24DE8AED0002DF48 /* FeatureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureTableViewCell.xib; sourceTree = "<group>"; };
+		9ABC71C124DE8D500002DF48 /* extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIColor.swift"; sourceTree = "<group>"; };
+		9ABC71C324DE94D30002DF48 /* CornershopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornershopView.swift; sourceTree = "<group>"; };
+		9ABC71C524DE95630002DF48 /* CornershopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornershopButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +121,11 @@
 		9A72D52E24DE595700140343 /* DemoCornershop */ = {
 			isa = PBXGroup;
 			children = (
+				9ABC71C024DE8D340002DF48 /* Extensions */,
+				9ABC71BA24DE899B0002DF48 /* CornershopUIKit */,
 				9A72D52F24DE595700140343 /* AppDelegate.swift */,
 				9A72D53124DE595700140343 /* SceneDelegate.swift */,
-				9A72D53324DE595700140343 /* ViewController.swift */,
-				9A72D53524DE595700140343 /* Main.storyboard */,
+				9ABC71C724DE95FF0002DF48 /* ModulesViper */,
 				9A72D53B24DE595A00140343 /* Assets.xcassets */,
 				9A72D53D24DE595A00140343 /* LaunchScreen.storyboard */,
 				9A72D54024DE595A00140343 /* Info.plist */,
@@ -129,6 +150,95 @@
 				9A72D55624DE595A00140343 /* Info.plist */,
 			);
 			path = DemoCornershopUITests;
+			sourceTree = "<group>";
+		};
+		9A72D56224DE624500140343 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				9A72D56724DE70B200140343 /* View */,
+				9A72D56B24DE70CE00140343 /* Interactor */,
+				9A72D56A24DE70CB00140343 /* Presenter */,
+				9A72D56924DE70C900140343 /* Entity */,
+				9A72D56824DE70C600140343 /* Router */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		9A72D56724DE70B200140343 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A72D56324DE626600140343 /* WelcomeViewController.swift */,
+				9A72D56424DE626600140343 /* WelcomeViewController.xib */,
+				9ABC71BB24DE8AC40002DF48 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A72D56824DE70C600140343 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9A72D56D24DE71CE00140343 /* WelcomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9A72D56924DE70C900140343 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9ABC71B824DE87CA0002DF48 /* Feature.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9A72D56A24DE70CB00140343 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9A72D56F24DE734500140343 /* WelcomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9A72D56B24DE70CE00140343 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9ABC71B324DE766E0002DF48 /* WelcomeInteractor.swift */,
+				9ABC71B624DE81490002DF48 /* features.json */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9ABC71BA24DE899B0002DF48 /* CornershopUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9ABC71C324DE94D30002DF48 /* CornershopView.swift */,
+				9ABC71C524DE95630002DF48 /* CornershopButton.swift */,
+			);
+			path = CornershopUIKit;
+			sourceTree = "<group>";
+		};
+		9ABC71BB24DE8AC40002DF48 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9ABC71BC24DE8AED0002DF48 /* FeatureTableViewCell.swift */,
+				9ABC71BD24DE8AED0002DF48 /* FeatureTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9ABC71C024DE8D340002DF48 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9ABC71C124DE8D500002DF48 /* extension+UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9ABC71C724DE95FF0002DF48 /* ModulesViper */ = {
+			isa = PBXGroup;
+			children = (
+				9A72D56224DE624500140343 /* Welcome */,
+			);
+			path = ModulesViper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +345,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABC71B724DE81490002DF48 /* features.json in Resources */,
 				9A72D53F24DE595A00140343 /* LaunchScreen.storyboard in Resources */,
+				9ABC71BF24DE8AED0002DF48 /* FeatureTableViewCell.xib in Resources */,
 				9A72D53C24DE595A00140343 /* Assets.xcassets in Resources */,
-				9A72D53724DE595700140343 /* Main.storyboard in Resources */,
+				9A72D56624DE626600140343 /* WelcomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +374,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A72D53424DE595700140343 /* ViewController.swift in Sources */,
 				9A72D53024DE595700140343 /* AppDelegate.swift in Sources */,
+				9A72D57024DE734500140343 /* WelcomePresenter.swift in Sources */,
+				9ABC71B424DE766E0002DF48 /* WelcomeInteractor.swift in Sources */,
+				9ABC71BE24DE8AED0002DF48 /* FeatureTableViewCell.swift in Sources */,
+				9ABC71C624DE95630002DF48 /* CornershopButton.swift in Sources */,
+				9A72D56524DE626600140343 /* WelcomeViewController.swift in Sources */,
+				9ABC71B924DE87CA0002DF48 /* Feature.swift in Sources */,
 				9A72D53224DE595700140343 /* SceneDelegate.swift in Sources */,
+				9A72D56E24DE71CE00140343 /* WelcomeRouter.swift in Sources */,
 				9A72D53A24DE595700140343 /* DemoCornershop.xcdatamodeld in Sources */,
+				9ABC71C424DE94D30002DF48 /* CornershopView.swift in Sources */,
+				9ABC71C224DE8D500002DF48 /* extension+UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +421,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9A72D53524DE595700140343 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9A72D53624DE595700140343 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9A72D53D24DE595A00140343 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -440,6 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DemoCornershop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,7 +560,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cornershop.DemoCornershop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -457,6 +570,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DemoCornershop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,7 +578,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cornershop.DemoCornershop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
