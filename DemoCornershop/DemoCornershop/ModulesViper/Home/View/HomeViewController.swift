@@ -36,6 +36,8 @@ class HomeViewController: UIViewController {
         tbvCounter.refreshControl = refreshControl
         
         setupNavigationController()
+        setupSearchBar()
+        setupToolbar()
         presenter = HomePresenter(viewController: self)
         loadCounters()
     }
@@ -45,15 +47,13 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor(named: "darkYellowCornershop") ?? .black
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isHidden = false
+        setupNavigationBarButtons()
+    }
+    
+    private func setupSearchBar(){
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-        
-        setupNavigationBarButtons()
-        navigationController?.isToolbarHidden = false
-        navigationController?.toolbar.tintColor = UIColor(named: "darkYellowCornershop") ?? .black
-        toolbarItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
-                        UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction(_:)))]
     }
     
     private func setupNavigationBarButtons(){
@@ -104,9 +104,24 @@ class HomeViewController: UIViewController {
             }
             
         }else{
-            toolbarItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
-                            UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction(_:)))]
-
+            if let count = presenter?.getCounterCount(),
+                count > 0,
+                let times = presenter?.getCounterItemCount(){
+                
+                let label = UILabel()
+                label.text = "\(count) items · Counted \(times) times"
+                label.font = UIFont(name: "SFProDisplay-Medium", size: 15)
+                label.textColor = UIColor(named: "darkGrayCornershop") ?? .black
+                
+                toolbarItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
+                                UIBarButtonItem(customView: label),
+                                UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
+                                UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction(_:)))]
+                
+            }else{
+                toolbarItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
+                                UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction(_:)))]
+            }
         }
     }
     
@@ -176,6 +191,7 @@ extension HomeViewController: HomeViewProtocol{
     func reloadData(){
         refreshControl.endRefreshing()
         tbvCounter.reloadData()
+        setupToolbarBarButtons()
     }
     
     func reloadDataAfterRemoveCounter(){
@@ -195,6 +211,7 @@ extension HomeViewController: HomeViewProtocol{
     func reloadCell(indexPath: IndexPath){
         
         tbvCounter.reloadRows(at: [indexPath], with: .none)
+        setupToolbarBarButtons()
     }
 }
 
@@ -213,8 +230,6 @@ extension HomeViewController: UITableViewDataSource{
         }
         return UITableViewCell()
     }
-    
-    
 }
 
 extension HomeViewController: UITableViewDelegate{

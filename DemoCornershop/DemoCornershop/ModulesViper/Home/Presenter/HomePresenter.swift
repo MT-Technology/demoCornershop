@@ -13,6 +13,7 @@ protocol HomePresenterProtocol {
     
     func loadCounters()
     func getCounterCount() -> Int
+    func getCounterItemCount() -> Int
     func getCounterAtIndexPath(indexPath: IndexPath) -> Counter
     func shareCounters(indexPaths: [IndexPath])
     func showDeleteAlert(itemsToDelete: Int, handler: ((UIAlertAction) -> Void)?)
@@ -70,6 +71,12 @@ extension HomePresenter: HomePresenterProtocol{
     
     func getCounterCount() -> Int{
         counters.count
+    }
+    
+    func getCounterItemCount() -> Int{
+        var items = 0
+        counters.forEach({items += $0.count})
+        return items
     }
     
     func getCounterAtIndexPath(indexPath: IndexPath) -> Counter{
