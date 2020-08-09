@@ -13,6 +13,7 @@ protocol WelcomePresenterProtocol: class{
     func loadContent()
     func getFeatureCount() -> Int
     func getFeatureAtIndexPath(indexPath: IndexPath) -> Feature
+    func enterToApp()
 }
 
 class WelcomePresenter{
@@ -45,5 +46,9 @@ extension WelcomePresenter: WelcomePresenterProtocol{
     
     func getFeatureAtIndexPath(indexPath: IndexPath) -> Feature{
         features[indexPath.row]
+    }
+    
+    func enterToApp(){
+        router.routeToHome()
     }
 }

@@ -56,6 +56,9 @@
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnContinueAction:" destination="-1" eventType="touchUpInside" id="VRg-vv-2G7"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" name="grayCornershop"/>

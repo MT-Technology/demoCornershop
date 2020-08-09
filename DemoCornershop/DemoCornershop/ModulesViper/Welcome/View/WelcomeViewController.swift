@@ -39,6 +39,10 @@ class WelcomeViewController: UIViewController {
         
         lblTitle.attributedText = attr
     }
+    
+    @IBAction private func btnContinueAction(_ sender: UIButton){
+        presenter?.enterToApp()
+    }
 }
 
 extension WelcomeViewController: WelcomeViewProtocol{

@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol WelcomeRouterProtocol: class{
-    
+    func routeToHome()
 }
 
 class WelcomeRouter{
@@ -25,5 +25,10 @@ class WelcomeRouter{
 
 extension WelcomeRouter: WelcomeRouterProtocol{
     
-    
+    func routeToHome(){
+        
+        guard let view = viewController else {return}
+        let vc = HomeViewController()
+        view.navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1143D0BC89047C4A1973A2E4 /* Pods_DemoCornershop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F11A737AD7A5283BA42FB0 /* Pods_DemoCornershop.framework */; };
+		5FA962361CFBE2587D956442 /* Pods_DemoCornershop_DemoCornershopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B259B6D392A8BDF06D215223 /* Pods_DemoCornershop_DemoCornershopUITests.framework */; };
 		9A72D53024DE595700140343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D52F24DE595700140343 /* AppDelegate.swift */; };
 		9A72D53224DE595700140343 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53124DE595700140343 /* SceneDelegate.swift */; };
 		9A72D53A24DE595700140343 /* DemoCornershop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53824DE595700140343 /* DemoCornershop.xcdatamodeld */; };
@@ -18,6 +20,15 @@
 		9A72D56624DE626600140343 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A72D56424DE626600140343 /* WelcomeViewController.xib */; };
 		9A72D56E24DE71CE00140343 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D56D24DE71CE00140343 /* WelcomeRouter.swift */; };
 		9A72D57024DE734500140343 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D56F24DE734500140343 /* WelcomePresenter.swift */; };
+		9A8CC0E124DEFBBE00321113 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC0DF24DEFBBE00321113 /* HomeViewController.swift */; };
+		9A8CC0E224DEFBBE00321113 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8CC0E024DEFBBE00321113 /* HomeViewController.xib */; };
+		9A8CC0E424DEFE0E00321113 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC0E324DEFE0E00321113 /* HomeInteractor.swift */; };
+		9A8CC0E624DEFE3300321113 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC0E524DEFE3300321113 /* HomePresenter.swift */; };
+		9A8CC0E824DEFE5400321113 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC0E724DEFE5400321113 /* HomeRouter.swift */; };
+		9A8CC12924DF5AD200321113 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC12824DF5AD200321113 /* Counter.swift */; };
+		9A8CC12C24DF5BF500321113 /* WebServiceUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC12B24DF5BF500321113 /* WebServiceUrl.swift */; };
+		9A8CC13024DF61C600321113 /* CounterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC12E24DF61C600321113 /* CounterTableViewCell.swift */; };
+		9A8CC13124DF61C600321113 /* CounterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8CC12F24DF61C600321113 /* CounterTableViewCell.xib */; };
 		9ABC71B424DE766E0002DF48 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71B324DE766E0002DF48 /* WelcomeInteractor.swift */; };
 		9ABC71B724DE81490002DF48 /* features.json in Resources */ = {isa = PBXBuildFile; fileRef = 9ABC71B624DE81490002DF48 /* features.json */; };
 		9ABC71B924DE87CA0002DF48 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71B824DE87CA0002DF48 /* Feature.swift */; };
@@ -26,6 +37,7 @@
 		9ABC71C224DE8D500002DF48 /* extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71C124DE8D500002DF48 /* extension+UIColor.swift */; };
 		9ABC71C424DE94D30002DF48 /* CornershopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71C324DE94D30002DF48 /* CornershopView.swift */; };
 		9ABC71C624DE95630002DF48 /* CornershopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71C524DE95630002DF48 /* CornershopButton.swift */; };
+		A2E51DAB690116C20F6D32F7 /* Pods_DemoCornershopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBCDDF27059670CF935ED60 /* Pods_DemoCornershopTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +58,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07F11A737AD7A5283BA42FB0 /* Pods_DemoCornershop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoCornershop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D3DF815267B26C3D74EC498 /* Pods-DemoCornershop-DemoCornershopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershop-DemoCornershopUITests.debug.xcconfig"; path = "Target Support Files/Pods-DemoCornershop-DemoCornershopUITests/Pods-DemoCornershop-DemoCornershopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E1D9FD8EE826BA5C9C9BFD7 /* Pods-DemoCornershop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershop.release.xcconfig"; path = "Target Support Files/Pods-DemoCornershop/Pods-DemoCornershop.release.xcconfig"; sourceTree = "<group>"; };
+		21B89CA4DC3DB9BB806F7728 /* Pods-DemoCornershopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershopTests.debug.xcconfig"; path = "Target Support Files/Pods-DemoCornershopTests/Pods-DemoCornershopTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4DF1EC372685B48D52C2A9C2 /* Pods-DemoCornershop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershop.debug.xcconfig"; path = "Target Support Files/Pods-DemoCornershop/Pods-DemoCornershop.debug.xcconfig"; sourceTree = "<group>"; };
+		7BBCDDF27059670CF935ED60 /* Pods_DemoCornershopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoCornershopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A72D52C24DE595700140343 /* DemoCornershop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCornershop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A72D52F24DE595700140343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A72D53124DE595700140343 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +81,15 @@
 		9A72D56424DE626600140343 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		9A72D56D24DE71CE00140343 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
 		9A72D56F24DE734500140343 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		9A8CC0DF24DEFBBE00321113 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9A8CC0E024DEFBBE00321113 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		9A8CC0E324DEFE0E00321113 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		9A8CC0E524DEFE3300321113 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		9A8CC0E724DEFE5400321113 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		9A8CC12824DF5AD200321113 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		9A8CC12B24DF5BF500321113 /* WebServiceUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceUrl.swift; sourceTree = "<group>"; };
+		9A8CC12E24DF61C600321113 /* CounterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTableViewCell.swift; sourceTree = "<group>"; };
+		9A8CC12F24DF61C600321113 /* CounterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterTableViewCell.xib; sourceTree = "<group>"; };
 		9ABC71B324DE766E0002DF48 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		9ABC71B624DE81490002DF48 /* features.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = features.json; sourceTree = "<group>"; };
 		9ABC71B824DE87CA0002DF48 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
@@ -71,6 +98,9 @@
 		9ABC71C124DE8D500002DF48 /* extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIColor.swift"; sourceTree = "<group>"; };
 		9ABC71C324DE94D30002DF48 /* CornershopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornershopView.swift; sourceTree = "<group>"; };
 		9ABC71C524DE95630002DF48 /* CornershopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornershopButton.swift; sourceTree = "<group>"; };
+		B259B6D392A8BDF06D215223 /* Pods_DemoCornershop_DemoCornershopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoCornershop_DemoCornershopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B43DF934C59385F10BF872AC /* Pods-DemoCornershop-DemoCornershopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershop-DemoCornershopUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoCornershop-DemoCornershopUITests/Pods-DemoCornershop-DemoCornershopUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F6DBB2AE571B7144863EAB19 /* Pods-DemoCornershopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershopTests.release.xcconfig"; path = "Target Support Files/Pods-DemoCornershopTests/Pods-DemoCornershopTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1143D0BC89047C4A1973A2E4 /* Pods_DemoCornershop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E51DAB690116C20F6D32F7 /* Pods_DemoCornershopTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +124,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FA962361CFBE2587D956442 /* Pods_DemoCornershop_DemoCornershopUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2419BA82E21A15BC875510D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07F11A737AD7A5283BA42FB0 /* Pods_DemoCornershop.framework */,
+				B259B6D392A8BDF06D215223 /* Pods_DemoCornershop_DemoCornershopUITests.framework */,
+				7BBCDDF27059670CF935ED60 /* Pods_DemoCornershopTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9A72D52324DE595700140343 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +148,8 @@
 				9A72D54824DE595A00140343 /* DemoCornershopTests */,
 				9A72D55324DE595A00140343 /* DemoCornershopUITests */,
 				9A72D52D24DE595700140343 /* Products */,
+				E2CFF973E91DF100ABB47A00 /* Pods */,
+				2419BA82E21A15BC875510D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +166,7 @@
 		9A72D52E24DE595700140343 /* DemoCornershop */ = {
 			isa = PBXGroup;
 			children = (
+				9A8CC12A24DF5B5A00321113 /* Constants */,
 				9ABC71C024DE8D340002DF48 /* Extensions */,
 				9ABC71BA24DE899B0002DF48 /* CornershopUIKit */,
 				9A72D52F24DE595700140343 /* AppDelegate.swift */,
@@ -207,6 +253,77 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		9A76AD8A24DE981D0048FD4E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC0DE24DEF75F00321113 /* View */,
+				9A8CC0DD24DEF75600321113 /* Interactor */,
+				9A8CC0DC24DEF74C00321113 /* Presenter */,
+				9A8CC0DB24DEF74600321113 /* Entity */,
+				9A8CC0DA24DEF74100321113 /* Router */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9A8CC0DA24DEF74100321113 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC0E724DEFE5400321113 /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9A8CC0DB24DEF74600321113 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC12824DF5AD200321113 /* Counter.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9A8CC0DC24DEF74C00321113 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC0E524DEFE3300321113 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9A8CC0DD24DEF75600321113 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC0E324DEFE0E00321113 /* HomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9A8CC0DE24DEF75F00321113 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC0DF24DEFBBE00321113 /* HomeViewController.swift */,
+				9A8CC0E024DEFBBE00321113 /* HomeViewController.xib */,
+				9A8CC12D24DF61B100321113 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A8CC12A24DF5B5A00321113 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC12B24DF5BF500321113 /* WebServiceUrl.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		9A8CC12D24DF61B100321113 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC12E24DF61C600321113 /* CounterTableViewCell.swift */,
+				9A8CC12F24DF61C600321113 /* CounterTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		9ABC71BA24DE899B0002DF48 /* CornershopUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,8 +354,22 @@
 			isa = PBXGroup;
 			children = (
 				9A72D56224DE624500140343 /* Welcome */,
+				9A76AD8A24DE981D0048FD4E /* Home */,
 			);
 			path = ModulesViper;
+			sourceTree = "<group>";
+		};
+		E2CFF973E91DF100ABB47A00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DF1EC372685B48D52C2A9C2 /* Pods-DemoCornershop.debug.xcconfig */,
+				1E1D9FD8EE826BA5C9C9BFD7 /* Pods-DemoCornershop.release.xcconfig */,
+				0D3DF815267B26C3D74EC498 /* Pods-DemoCornershop-DemoCornershopUITests.debug.xcconfig */,
+				B43DF934C59385F10BF872AC /* Pods-DemoCornershop-DemoCornershopUITests.release.xcconfig */,
+				21B89CA4DC3DB9BB806F7728 /* Pods-DemoCornershopTests.debug.xcconfig */,
+				F6DBB2AE571B7144863EAB19 /* Pods-DemoCornershopTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,9 +379,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A72D55924DE595A00140343 /* Build configuration list for PBXNativeTarget "DemoCornershop" */;
 			buildPhases = (
+				646BB040EDB93CA874C2F1F1 /* [CP] Check Pods Manifest.lock */,
 				9A72D52824DE595700140343 /* Sources */,
 				9A72D52924DE595700140343 /* Frameworks */,
 				9A72D52A24DE595700140343 /* Resources */,
+				0EAEEB9DBCD9A0231D38C86A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,6 +398,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A72D55C24DE595A00140343 /* Build configuration list for PBXNativeTarget "DemoCornershopTests" */;
 			buildPhases = (
+				22EC8C78B6C979844AE93B96 /* [CP] Check Pods Manifest.lock */,
 				9A72D54124DE595A00140343 /* Sources */,
 				9A72D54224DE595A00140343 /* Frameworks */,
 				9A72D54324DE595A00140343 /* Resources */,
@@ -283,9 +417,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A72D55F24DE595A00140343 /* Build configuration list for PBXNativeTarget "DemoCornershopUITests" */;
 			buildPhases = (
+				F39D06A61E43C2B6A498DBF7 /* [CP] Check Pods Manifest.lock */,
 				9A72D54C24DE595A00140343 /* Sources */,
 				9A72D54D24DE595A00140343 /* Frameworks */,
 				9A72D54E24DE595A00140343 /* Resources */,
+				42CF9970AD1344420DFCD34C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,8 +484,10 @@
 				9ABC71B724DE81490002DF48 /* features.json in Resources */,
 				9A72D53F24DE595A00140343 /* LaunchScreen.storyboard in Resources */,
 				9ABC71BF24DE8AED0002DF48 /* FeatureTableViewCell.xib in Resources */,
+				9A8CC13124DF61C600321113 /* CounterTableViewCell.xib in Resources */,
 				9A72D53C24DE595A00140343 /* Assets.xcassets in Resources */,
 				9A72D56624DE626600140343 /* WelcomeViewController.xib in Resources */,
+				9A8CC0E224DEFBBE00321113 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +507,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EAEEB9DBCD9A0231D38C86A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoCornershop/Pods-DemoCornershop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoCornershop/Pods-DemoCornershop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoCornershop/Pods-DemoCornershop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22EC8C78B6C979844AE93B96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoCornershopTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42CF9970AD1344420DFCD34C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoCornershop-DemoCornershopUITests/Pods-DemoCornershop-DemoCornershopUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoCornershop-DemoCornershopUITests/Pods-DemoCornershop-DemoCornershopUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoCornershop-DemoCornershopUITests/Pods-DemoCornershop-DemoCornershopUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		646BB040EDB93CA874C2F1F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoCornershop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F39D06A61E43C2B6A498DBF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoCornershop-DemoCornershopUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A72D52824DE595700140343 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -377,15 +618,22 @@
 				9A72D53024DE595700140343 /* AppDelegate.swift in Sources */,
 				9A72D57024DE734500140343 /* WelcomePresenter.swift in Sources */,
 				9ABC71B424DE766E0002DF48 /* WelcomeInteractor.swift in Sources */,
+				9A8CC0E624DEFE3300321113 /* HomePresenter.swift in Sources */,
+				9A8CC13024DF61C600321113 /* CounterTableViewCell.swift in Sources */,
 				9ABC71BE24DE8AED0002DF48 /* FeatureTableViewCell.swift in Sources */,
+				9A8CC0E824DEFE5400321113 /* HomeRouter.swift in Sources */,
 				9ABC71C624DE95630002DF48 /* CornershopButton.swift in Sources */,
+				9A8CC12924DF5AD200321113 /* Counter.swift in Sources */,
 				9A72D56524DE626600140343 /* WelcomeViewController.swift in Sources */,
 				9ABC71B924DE87CA0002DF48 /* Feature.swift in Sources */,
+				9A8CC12C24DF5BF500321113 /* WebServiceUrl.swift in Sources */,
 				9A72D53224DE595700140343 /* SceneDelegate.swift in Sources */,
 				9A72D56E24DE71CE00140343 /* WelcomeRouter.swift in Sources */,
 				9A72D53A24DE595700140343 /* DemoCornershop.xcdatamodeld in Sources */,
 				9ABC71C424DE94D30002DF48 /* CornershopView.swift in Sources */,
+				9A8CC0E124DEFBBE00321113 /* HomeViewController.swift in Sources */,
 				9ABC71C224DE8D500002DF48 /* extension+UIColor.swift in Sources */,
+				9A8CC0E424DEFE0E00321113 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +796,7 @@
 		};
 		9A72D55A24DE595A00140343 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DF1EC372685B48D52C2A9C2 /* Pods-DemoCornershop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -566,6 +815,7 @@
 		};
 		9A72D55B24DE595A00140343 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E1D9FD8EE826BA5C9C9BFD7 /* Pods-DemoCornershop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -584,6 +834,7 @@
 		};
 		9A72D55D24DE595A00140343 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21B89CA4DC3DB9BB806F7728 /* Pods-DemoCornershopTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -605,6 +856,7 @@
 		};
 		9A72D55E24DE595A00140343 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6DBB2AE571B7144863EAB19 /* Pods-DemoCornershopTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -626,6 +878,7 @@
 		};
 		9A72D56024DE595A00140343 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D3DF815267B26C3D74EC498 /* Pods-DemoCornershop-DemoCornershopUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -645,6 +898,7 @@
 		};
 		9A72D56124DE595A00140343 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B43DF934C59385F10BF872AC /* Pods-DemoCornershop-DemoCornershopUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
