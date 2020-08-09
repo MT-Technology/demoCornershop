@@ -33,6 +33,11 @@
 		9A8CC14124E07FBB00321113 /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8CC13F24E07FBB00321113 /* SearchResultViewController.xib */; };
 		9A8CC14324E0859C00321113 /* SearchResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC14224E0859C00321113 /* SearchResultPresenter.swift */; };
 		9A8CC14524E08FA800321113 /* SearchResultInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC14424E08FA800321113 /* SearchResultInteractor.swift */; };
+		9A8CC14E24E09BEE00321113 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC14C24E09BEE00321113 /* CreateViewController.swift */; };
+		9A8CC14F24E09BEE00321113 /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8CC14D24E09BEE00321113 /* CreateViewController.xib */; };
+		9A8CC19024E0A51F00321113 /* CreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC18F24E0A51F00321113 /* CreateInteractor.swift */; };
+		9A8CC19324E0A57D00321113 /* CreateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC19224E0A57D00321113 /* CreateRouter.swift */; };
+		9A8CC19624E0A5D600321113 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC19524E0A5D600321113 /* CreatePresenter.swift */; };
 		9ABC71B424DE766E0002DF48 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71B324DE766E0002DF48 /* WelcomeInteractor.swift */; };
 		9ABC71B724DE81490002DF48 /* features.json in Resources */ = {isa = PBXBuildFile; fileRef = 9ABC71B624DE81490002DF48 /* features.json */; };
 		9ABC71B924DE87CA0002DF48 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71B824DE87CA0002DF48 /* Feature.swift */; };
@@ -98,6 +103,11 @@
 		9A8CC13F24E07FBB00321113 /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
 		9A8CC14224E0859C00321113 /* SearchResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultPresenter.swift; sourceTree = "<group>"; };
 		9A8CC14424E08FA800321113 /* SearchResultInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultInteractor.swift; sourceTree = "<group>"; };
+		9A8CC14C24E09BEE00321113 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		9A8CC14D24E09BEE00321113 /* CreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateViewController.xib; sourceTree = "<group>"; };
+		9A8CC18F24E0A51F00321113 /* CreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInteractor.swift; sourceTree = "<group>"; };
+		9A8CC19224E0A57D00321113 /* CreateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRouter.swift; sourceTree = "<group>"; };
+		9A8CC19524E0A5D600321113 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
 		9ABC71B324DE766E0002DF48 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		9ABC71B624DE81490002DF48 /* features.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = features.json; sourceTree = "<group>"; };
 		9ABC71B824DE87CA0002DF48 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
@@ -383,6 +393,58 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9A8CC14624E09B9D00321113 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC14B24E09BB300321113 /* View */,
+				9A8CC14A24E09BB100321113 /* Interactor */,
+				9A8CC14924E09BAE00321113 /* Presenter */,
+				9A8CC14824E09BAB00321113 /* Entity */,
+				9A8CC14724E09BA800321113 /* Router */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		9A8CC14724E09BA800321113 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC19224E0A57D00321113 /* CreateRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9A8CC14824E09BAB00321113 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9A8CC14924E09BAE00321113 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC19524E0A5D600321113 /* CreatePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9A8CC14A24E09BB100321113 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC18F24E0A51F00321113 /* CreateInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9A8CC14B24E09BB300321113 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC14C24E09BEE00321113 /* CreateViewController.swift */,
+				9A8CC14D24E09BEE00321113 /* CreateViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9ABC71BA24DE899B0002DF48 /* CornershopUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +477,7 @@
 				9A72D56224DE624500140343 /* Welcome */,
 				9A76AD8A24DE981D0048FD4E /* Home */,
 				9A8CC13624E07F0100321113 /* SearchResult */,
+				9A8CC14624E09B9D00321113 /* Create */,
 			);
 			path = ModulesViper;
 			sourceTree = "<group>";
@@ -546,6 +609,7 @@
 				9ABC71BF24DE8AED0002DF48 /* FeatureTableViewCell.xib in Resources */,
 				9A8CC14124E07FBB00321113 /* SearchResultViewController.xib in Resources */,
 				9A8CC13124DF61C600321113 /* CounterTableViewCell.xib in Resources */,
+				9A8CC14F24E09BEE00321113 /* CreateViewController.xib in Resources */,
 				9A72D53C24DE595A00140343 /* Assets.xcassets in Resources */,
 				9A72D56624DE626600140343 /* WelcomeViewController.xib in Resources */,
 				9A8CC0E224DEFBBE00321113 /* HomeViewController.xib in Resources */,
@@ -676,6 +740,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8CC19024E0A51F00321113 /* CreateInteractor.swift in Sources */,
 				9A72D53024DE595700140343 /* AppDelegate.swift in Sources */,
 				9A72D57024DE734500140343 /* WelcomePresenter.swift in Sources */,
 				9A8CC14024E07FBB00321113 /* SearchResultViewController.swift in Sources */,
@@ -683,9 +748,12 @@
 				9A8CC14324E0859C00321113 /* SearchResultPresenter.swift in Sources */,
 				9A8CC0E624DEFE3300321113 /* HomePresenter.swift in Sources */,
 				9A8CC13024DF61C600321113 /* CounterTableViewCell.swift in Sources */,
+				9A8CC19624E0A5D600321113 /* CreatePresenter.swift in Sources */,
 				9ABC71BE24DE8AED0002DF48 /* FeatureTableViewCell.swift in Sources */,
 				9A8CC0E824DEFE5400321113 /* HomeRouter.swift in Sources */,
+				9A8CC14E24E09BEE00321113 /* CreateViewController.swift in Sources */,
 				9ABC71C624DE95630002DF48 /* CornershopButton.swift in Sources */,
+				9A8CC19324E0A57D00321113 /* CreateRouter.swift in Sources */,
 				9A8CC12924DF5AD200321113 /* Counter.swift in Sources */,
 				9A72D56524DE626600140343 /* WelcomeViewController.swift in Sources */,
 				9ABC71B924DE87CA0002DF48 /* Feature.swift in Sources */,

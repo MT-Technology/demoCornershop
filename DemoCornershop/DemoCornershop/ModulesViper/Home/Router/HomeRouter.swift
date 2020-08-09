@@ -13,6 +13,7 @@ protocol HomeRouterProtocol {
 
     func routeToShare(textToShare: String)
     func routeToDeleteAlert(itemsToDelete: Int, handler: ((UIAlertAction) -> Void)?)
+    func routeToCreate()
 }
 
 class HomeRouter{
@@ -38,5 +39,11 @@ extension HomeRouter: HomeRouterProtocol{
         cancelAction.setValue(UIColor(named: "darkYellowCornershop"), forKey: "titleTextColor")
         alert.addAction(cancelAction)
         viewController?.present(alert, animated: true, completion: nil)
+    }
+    
+    func routeToCreate(){
+        
+        let vc = CreateViewController()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

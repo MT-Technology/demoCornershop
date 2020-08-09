@@ -34,18 +34,22 @@ class HomeViewController: UIViewController {
 
         tbvCounter.register(UINib(nibName: "CounterTableViewCell", bundle: nil), forCellReuseIdentifier: CounterTableViewCell.identifier)
         tbvCounter.refreshControl = refreshControl
-        
+    
         setupNavigationController()
         setupSearchBar()
-        setupToolbar()
         presenter = HomePresenter(viewController: self)
         loadCounters()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupToolbar()
+        
     }
     
     private func setupNavigationController(){
         title = "Counters"
         navigationController?.navigationBar.tintColor = UIColor(named: "darkYellowCornershop") ?? .black
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isHidden = false
         setupNavigationBarButtons()
     }
@@ -130,6 +134,7 @@ class HomeViewController: UIViewController {
     
     @objc private func doneAction(_ sender: UIBarButtonItem){
         tbvCounter.setEditing(false, animated: true)
+        navigationItem.searchController?.searchBar.isUserInteractionEnabled = true
         setupNavigationBarButtons()
         setupToolbarBarButtons()
     }
@@ -156,12 +161,13 @@ class HomeViewController: UIViewController {
     
     @objc private func editAction(_ sender: UIBarButtonItem){
         tbvCounter.setEditing(true, animated: true)
+        navigationItem.searchController?.searchBar.isUserInteractionEnabled = false
         setupNavigationBarButtons()
         setupToolbarBarButtons()
     }
     
     @objc private func addAction(_ sender: UIBarButtonItem){
-        print("agregar")
+        presenter?.createCounter()
     }
     
     @objc private func shareAction(_ sender: UIBarButtonItem){

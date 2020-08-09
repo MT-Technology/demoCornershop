@@ -50,6 +50,8 @@ extension SearchResultPresenter: SearchResultPresenterProtocol{
             guard let welf = self else {return}
             welf.counters[indexPath.row].count = count
             welf.view?.reloadCell(indexPath: indexPath)
+            NotificationCenter.default.post(name: NSNotification.Name.init("updateCounterFromSearchResult"),
+                                            object: welf.counters[indexPath.row])
         }) { (error) in
         }
     }
@@ -60,6 +62,8 @@ extension SearchResultPresenter: SearchResultPresenterProtocol{
             guard let welf = self else {return}
             welf.counters[indexPath.row].count = count
             welf.view?.reloadCell(indexPath: indexPath)
+            NotificationCenter.default.post(name: NSNotification.Name.init("updateCounterFromSearchResult"),
+                                            object: welf.counters[indexPath.row])
         }) { (error) in
         }
     }

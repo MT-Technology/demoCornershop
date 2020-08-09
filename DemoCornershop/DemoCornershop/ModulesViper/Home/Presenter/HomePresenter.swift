@@ -22,6 +22,7 @@ protocol HomePresenterProtocol {
     func didIncrementCount(indexPath: IndexPath)
     func didDecrementCount(indexPath: IndexPath)
     func getCounterByFilter(name: String) -> [Counter]
+    func createCounter()
 }
 
 class HomePresenter{
@@ -37,6 +38,18 @@ class HomePresenter{
         view = viewController
         interactor = HomeInteractor()
         router = HomeRouter(viewController: viewController)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCounterFromResultSearchResult(notification:)),
+                                               name: NSNotification.Name.init("updateCounterFromSearchResult"), object: nil)
+    }
+    
+    @objc private func updateCounterFromResultSearchResult(notification : Notification){
+        
+        if let counter = notification.object as? Counter,
+            let indexRow = counters.firstIndex(where: {$0.id == counter.id}){
+            counters[indexRow].count = counter.count
+            view?.reloadCell(indexPath: IndexPath(row: indexRow, section: 0))
+        }
     }
     
     func deleteCounter(){
@@ -132,5 +145,9 @@ extension HomePresenter: HomePresenterProtocol{
     
     func getCounterByFilter(name: String) -> [Counter]{
         counters.filter({ $0.title.uppercased().contains(name.uppercased()) })        
+    }
+    
+    func createCounter(){
+        router.routeToCreate()
     }
 }
