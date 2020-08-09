@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNt-X7-Erc" customClass="CornershopView" customModule="DemoCornershop" customModuleProvider="target">
                         <rect key="frame" x="12" y="5" width="296" height="96"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5E-Ia-8RP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5E-Ia-8RP">
                                 <rect key="frame" x="10" y="15" width="40" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="textColor" name="darkYellowCornershop"/>
@@ -34,18 +34,21 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiS-6E-A5h">
-                                <rect key="frame" x="72" y="15" width="214" height="21"/>
+                                <rect key="frame" x="72" y="19" width="214" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="iff-7I-d4Q">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="99" translatesAutoresizingMaskIntoConstraints="NO" id="iff-7I-d4Q">
                                 <rect key="frame" x="188" y="50" width="94" height="32"/>
+                                <connections>
+                                    <action selector="countChangedAction:" destination="KGk-i7-Jjw" eventType="valueChanged" id="fYe-2s-DEK"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="iff-7I-d4Q" firstAttribute="top" secondItem="oiS-6E-A5h" secondAttribute="bottom" constant="14" id="1a8-Pm-s8v"/>
+                            <constraint firstItem="iff-7I-d4Q" firstAttribute="top" secondItem="oiS-6E-A5h" secondAttribute="bottom" constant="10.5" id="0Df-NG-PrT"/>
                             <constraint firstItem="n5E-Ia-8RP" firstAttribute="top" secondItem="YNt-X7-Erc" secondAttribute="top" constant="15" id="GEC-pF-tLf"/>
                             <constraint firstItem="vjG-zR-JUd" firstAttribute="leading" secondItem="YNt-X7-Erc" secondAttribute="leading" constant="60" id="Gfn-fq-Wei"/>
                             <constraint firstAttribute="bottom" secondItem="vjG-zR-JUd" secondAttribute="bottom" id="NSQ-wE-5PY"/>
@@ -56,7 +59,7 @@
                             <constraint firstItem="vjG-zR-JUd" firstAttribute="leading" secondItem="n5E-Ia-8RP" secondAttribute="trailing" constant="10" id="fy2-9a-P5Q"/>
                             <constraint firstAttribute="trailing" secondItem="iff-7I-d4Q" secondAttribute="trailing" constant="14" id="ms0-P3-utF"/>
                             <constraint firstItem="oiS-6E-A5h" firstAttribute="leading" secondItem="vjG-zR-JUd" secondAttribute="trailing" constant="10" id="oX1-hO-DEG"/>
-                            <constraint firstItem="oiS-6E-A5h" firstAttribute="top" secondItem="YNt-X7-Erc" secondAttribute="top" constant="15" id="sis-aO-IAL"/>
+                            <constraint firstItem="oiS-6E-A5h" firstAttribute="top" secondItem="YNt-X7-Erc" secondAttribute="top" constant="19" id="sis-aO-IAL"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -79,6 +82,7 @@
             <connections>
                 <outlet property="lblCount" destination="n5E-Ia-8RP" id="4Fc-4k-Ew7"/>
                 <outlet property="lblTitle" destination="oiS-6E-A5h" id="PTa-Kf-WlF"/>
+                <outlet property="stpCount" destination="iff-7I-d4Q" id="YHa-JP-WoA"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="134.59821428571428"/>
         </tableViewCell>

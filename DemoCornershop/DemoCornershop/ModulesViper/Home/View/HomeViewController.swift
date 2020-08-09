@@ -12,6 +12,7 @@ protocol HomeViewProtocol: class {
     
     func reloadData()
     func reloadDataAfterRemoveCounter()
+    func reloadCell(indexPath: IndexPath)
 }
 
 class HomeViewController: UIViewController {
@@ -190,6 +191,11 @@ extension HomeViewController: HomeViewProtocol{
             setupToolbarBarButtons()
         }
     }
+    
+    func reloadCell(indexPath: IndexPath){
+        
+        tbvCounter.reloadRows(at: [indexPath], with: .none)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource{
@@ -202,7 +208,7 @@ extension HomeViewController: UITableViewDataSource{
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: CounterTableViewCell.identifier, for: indexPath) as? CounterTableViewCell,
             let counter = presenter?.getCounterAtIndexPath(indexPath: indexPath){
-            cell.buildCell(counter: counter)
+            cell.buildCell(counter: counter, delegate: self)
             return cell
         }
         return UITableViewCell()
@@ -232,6 +238,21 @@ extension HomeViewController: UITableViewDelegate{
                 setupNavigationBarButtons()
             }
             setupToolbarBarButtons()
+        }
+    }
+}
+
+extension HomeViewController: CounterTableViewCellProtocol{
+    
+    func didDecrementCount(cell: CounterTableViewCell) {
+        if let indexPath = tbvCounter.indexPath(for: cell){
+            presenter?.didDecrementCount(indexPath: indexPath)
+        }
+    }
+    
+    func didIncrementCount(cell: CounterTableViewCell) {
+        if let indexPath = tbvCounter.indexPath(for: cell){
+            presenter?.didIncrementCount(indexPath: indexPath)
         }
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 struct Counter {
     
     let id: String
-    let count: Int
+    var count: Int
     let title: String
     
     init(json: [String:Any]) {

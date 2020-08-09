@@ -15,5 +15,7 @@ struct WebServiceUrl {
     
     static let allCounters = WebServiceUrl.baseUrl + "counters"
     static let deleteCounter = WebServiceUrl.baseUrl + "counter"
+    static let incrementCounter = WebServiceUrl.baseUrl + "counter/inc"
+    static let decrementCounter = WebServiceUrl.baseUrl + "counter/dec"
     
 }

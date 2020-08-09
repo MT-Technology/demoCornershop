@@ -18,6 +18,8 @@ protocol HomePresenterProtocol {
     func showDeleteAlert(itemsToDelete: Int, handler: ((UIAlertAction) -> Void)?)
     func deleteCounters(indexPaths: [IndexPath])
     func deletePersistentCounters(indexPaths: [IndexPath])
+    func didIncrementCount(indexPath: IndexPath)
+    func didDecrementCount(indexPath: IndexPath)
 }
 
 class HomePresenter{
@@ -49,7 +51,6 @@ class HomePresenter{
                     welf.deleteCounter()
                 }
             }) { (error) in
-                
             }
         }
     }
@@ -64,7 +65,6 @@ extension HomePresenter: HomePresenterProtocol{
             welf.counters = counters
             welf.view?.reloadData()
         }) { (error) in
-            
         }
     }
     
@@ -100,5 +100,25 @@ extension HomePresenter: HomePresenterProtocol{
         
         let rows = indexPaths.map({$0.row}).sorted(by: {$0 > $1})
         rows.forEach({counters.remove(at: $0)})
+    }
+    
+    func didIncrementCount(indexPath: IndexPath){
+        let id = counters[indexPath.row].id
+        interactor.incrementCounter(counterId: id, success: { [weak self] count in
+            guard let welf = self else {return}
+            welf.counters[indexPath.row].count = count
+            welf.view?.reloadCell(indexPath: indexPath)
+        }) { (error) in
+        }
+    }
+    
+    func didDecrementCount(indexPath: IndexPath){
+        let id = counters[indexPath.row].id
+        interactor.decrementCounter(counterId: id, success: { [weak self] count in
+            guard let welf = self else {return}
+            welf.counters[indexPath.row].count = count
+            welf.view?.reloadCell(indexPath: indexPath)
+        }) { (error) in
+        }
     }
 }
