@@ -29,6 +29,10 @@
 		9A8CC12C24DF5BF500321113 /* WebServiceUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC12B24DF5BF500321113 /* WebServiceUrl.swift */; };
 		9A8CC13024DF61C600321113 /* CounterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC12E24DF61C600321113 /* CounterTableViewCell.swift */; };
 		9A8CC13124DF61C600321113 /* CounterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8CC12F24DF61C600321113 /* CounterTableViewCell.xib */; };
+		9A8CC14024E07FBB00321113 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC13E24E07FBB00321113 /* SearchResultViewController.swift */; };
+		9A8CC14124E07FBB00321113 /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8CC13F24E07FBB00321113 /* SearchResultViewController.xib */; };
+		9A8CC14324E0859C00321113 /* SearchResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC14224E0859C00321113 /* SearchResultPresenter.swift */; };
+		9A8CC14524E08FA800321113 /* SearchResultInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8CC14424E08FA800321113 /* SearchResultInteractor.swift */; };
 		9ABC71B424DE766E0002DF48 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71B324DE766E0002DF48 /* WelcomeInteractor.swift */; };
 		9ABC71B724DE81490002DF48 /* features.json in Resources */ = {isa = PBXBuildFile; fileRef = 9ABC71B624DE81490002DF48 /* features.json */; };
 		9ABC71B924DE87CA0002DF48 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC71B824DE87CA0002DF48 /* Feature.swift */; };
@@ -90,6 +94,10 @@
 		9A8CC12B24DF5BF500321113 /* WebServiceUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceUrl.swift; sourceTree = "<group>"; };
 		9A8CC12E24DF61C600321113 /* CounterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTableViewCell.swift; sourceTree = "<group>"; };
 		9A8CC12F24DF61C600321113 /* CounterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterTableViewCell.xib; sourceTree = "<group>"; };
+		9A8CC13E24E07FBB00321113 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		9A8CC13F24E07FBB00321113 /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
+		9A8CC14224E0859C00321113 /* SearchResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultPresenter.swift; sourceTree = "<group>"; };
+		9A8CC14424E08FA800321113 /* SearchResultInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultInteractor.swift; sourceTree = "<group>"; };
 		9ABC71B324DE766E0002DF48 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		9ABC71B624DE81490002DF48 /* features.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = features.json; sourceTree = "<group>"; };
 		9ABC71B824DE87CA0002DF48 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
@@ -324,6 +332,57 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		9A8CC13624E07F0100321113 /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC13B24E07F7C00321113 /* View */,
+				9A8CC13924E07F6C00321113 /* Interactor */,
+				9A8CC13A24E07F7400321113 /* Presenter */,
+				9A8CC13824E07F6400321113 /* Entity */,
+				9A8CC13724E07F5B00321113 /* Router */,
+			);
+			path = SearchResult;
+			sourceTree = "<group>";
+		};
+		9A8CC13724E07F5B00321113 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9A8CC13824E07F6400321113 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9A8CC13924E07F6C00321113 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC14424E08FA800321113 /* SearchResultInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9A8CC13A24E07F7400321113 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC14224E0859C00321113 /* SearchResultPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9A8CC13B24E07F7C00321113 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A8CC13E24E07FBB00321113 /* SearchResultViewController.swift */,
+				9A8CC13F24E07FBB00321113 /* SearchResultViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9ABC71BA24DE899B0002DF48 /* CornershopUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +414,7 @@
 			children = (
 				9A72D56224DE624500140343 /* Welcome */,
 				9A76AD8A24DE981D0048FD4E /* Home */,
+				9A8CC13624E07F0100321113 /* SearchResult */,
 			);
 			path = ModulesViper;
 			sourceTree = "<group>";
@@ -484,6 +544,7 @@
 				9ABC71B724DE81490002DF48 /* features.json in Resources */,
 				9A72D53F24DE595A00140343 /* LaunchScreen.storyboard in Resources */,
 				9ABC71BF24DE8AED0002DF48 /* FeatureTableViewCell.xib in Resources */,
+				9A8CC14124E07FBB00321113 /* SearchResultViewController.xib in Resources */,
 				9A8CC13124DF61C600321113 /* CounterTableViewCell.xib in Resources */,
 				9A72D53C24DE595A00140343 /* Assets.xcassets in Resources */,
 				9A72D56624DE626600140343 /* WelcomeViewController.xib in Resources */,
@@ -617,7 +678,9 @@
 			files = (
 				9A72D53024DE595700140343 /* AppDelegate.swift in Sources */,
 				9A72D57024DE734500140343 /* WelcomePresenter.swift in Sources */,
+				9A8CC14024E07FBB00321113 /* SearchResultViewController.swift in Sources */,
 				9ABC71B424DE766E0002DF48 /* WelcomeInteractor.swift in Sources */,
+				9A8CC14324E0859C00321113 /* SearchResultPresenter.swift in Sources */,
 				9A8CC0E624DEFE3300321113 /* HomePresenter.swift in Sources */,
 				9A8CC13024DF61C600321113 /* CounterTableViewCell.swift in Sources */,
 				9ABC71BE24DE8AED0002DF48 /* FeatureTableViewCell.swift in Sources */,
@@ -634,6 +697,7 @@
 				9A8CC0E124DEFBBE00321113 /* HomeViewController.swift in Sources */,
 				9ABC71C224DE8D500002DF48 /* extension+UIColor.swift in Sources */,
 				9A8CC0E424DEFE0E00321113 /* HomeInteractor.swift in Sources */,
+				9A8CC14524E08FA800321113 /* SearchResultInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

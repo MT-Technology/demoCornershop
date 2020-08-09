@@ -21,6 +21,7 @@ protocol HomePresenterProtocol {
     func deletePersistentCounters(indexPaths: [IndexPath])
     func didIncrementCount(indexPath: IndexPath)
     func didDecrementCount(indexPath: IndexPath)
+    func getCounterByFilter(name: String) -> [Counter]
 }
 
 class HomePresenter{
@@ -33,9 +34,9 @@ class HomePresenter{
     private var idToDelete: [String] = []
     
     init (viewController: HomeViewController){
-        self.view = viewController
-        self.interactor = HomeInteractor()
-        self.router = HomeRouter(viewController: viewController)
+        view = viewController
+        interactor = HomeInteractor()
+        router = HomeRouter(viewController: viewController)
     }
     
     func deleteCounter(){
@@ -127,5 +128,9 @@ extension HomePresenter: HomePresenterProtocol{
             welf.view?.reloadCell(indexPath: indexPath)
         }) { (error) in
         }
+    }
+    
+    func getCounterByFilter(name: String) -> [Counter]{
+        counters.filter({ $0.title.uppercased().contains(name.uppercased()) })        
     }
 }

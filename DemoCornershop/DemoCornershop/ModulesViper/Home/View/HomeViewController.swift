@@ -51,7 +51,10 @@ class HomeViewController: UIViewController {
     }
     
     private func setupSearchBar(){
-        let searchController = UISearchController(searchResultsController: nil)
+        
+        let searchController = UISearchController(searchResultsController: SearchResultViewController())
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -213,6 +216,30 @@ extension HomeViewController: HomeViewProtocol{
         tbvCounter.reloadRows(at: [indexPath], with: .none)
         setupToolbarBarButtons()
     }
+}
+
+extension HomeViewController: UISearchResultsUpdating{
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        if let vc = searchController.searchResultsController as? SearchResultViewController,
+            let searchText = searchController.searchBar.text,
+            let counters = presenter?.getCounterByFilter(name: searchText){
+            vc.setFilterResult(counters: counters)
+        }
+    }
+}
+
+extension HomeViewController: UISearchControllerDelegate{
+    
+    func willPresentSearchController(_ searchController: UISearchController) {
+        navigationController?.toolbar.isHidden = true
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController){
+        navigationController?.toolbar.isHidden = false
+    }
+    
 }
 
 extension HomeViewController: UITableViewDataSource{

@@ -1,47 +1,26 @@
 //
-//  HomeInteractor.swift
+//  SearchResultInteractor.swift
 //  DemoCornershop
 //
-//  Created by Everis on 8/8/20.
+//  Created by Everis on 8/9/20.
 //  Copyright © 2020 Everis. All rights reserved.
 //
 
 import Foundation
 import MTWebServiceManager
 
-protocol HomeInteractorProtocol {
+protocol SearchResultInteractorProtocol {
     
-    func getCounters(success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ error : Error)-> Void)
-    func deleteCounter(counterId: String, success: @escaping ()-> Void, failure: @escaping (_ error : Error)-> Void)
     func incrementCounter(counterId: String, success: @escaping (_ count: Int)-> Void, failure: @escaping (_ error : Error)-> Void)
     func decrementCounter(counterId: String, success: @escaping (_ count: Int)-> Void, failure: @escaping (_ error : Error)-> Void)
-}
-
-class HomeInteractor{
     
 }
 
-extension HomeInteractor: HomeInteractorProtocol{
+class SearchResultInteractor{
     
-    func getCounters(success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ error : Error)-> Void){
-       MTWebServiceManager.shared.request.getRequest(urlString: WebServiceUrl.allCounters, parameters: nil) { (response) in
-            if response.status == .success,
-                let countersUnparsed = response.response as? [[String: Any]]{
-                success(countersUnparsed.map({Counter(json: $0)}))
-            }else{
-                
-            }
-        }
-    }
-    
-    func deleteCounter(counterId: String, success: @escaping ()-> Void, failure: @escaping (_ error : Error)-> Void){
-        let param = ["id": counterId]
-        MTWebServiceManager.shared.request.deleteRequest(urlString: WebServiceUrl.deleteCounter, parameters: param) { (response) in
-            if response.status == .success{
-                success()
-            }
-        }
-    }
+}
+
+extension SearchResultInteractor: SearchResultInteractorProtocol{
     
     func incrementCounter(counterId: String, success: @escaping (_ count: Int)-> Void, failure: @escaping (_ error : Error)-> Void){
         let param = ["id": counterId]
