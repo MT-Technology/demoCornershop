@@ -14,5 +14,6 @@ struct WebServiceUrl {
     private static let baseUrl = "http://localhost:3000/api/v1/"
     
     static let allCounters = WebServiceUrl.baseUrl + "counters"
+    static let deleteCounter = WebServiceUrl.baseUrl + "counter"
     
 }

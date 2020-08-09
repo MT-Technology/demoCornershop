@@ -11,6 +11,7 @@ import UIKit
 protocol HomeViewProtocol: class {
     
     func reloadData()
+    func reloadDataAfterRemoveCounter()
 }
 
 class HomeViewController: UIViewController {
@@ -87,7 +88,7 @@ class HomeViewController: UIViewController {
         
         if tbvCounter.isEditing{
             
-            let deleteButton =  UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(addAction(_:)))
+            let deleteButton =  UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteAction(_:)))
             let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareAction(_:)))
             toolbarItems = [deleteButton,
                             UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
@@ -109,15 +110,12 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func doneAction(_ sender: UIBarButtonItem){
-        print("echo")
-        tbvCounter.isEditing = false
+        tbvCounter.setEditing(false, animated: true)
         setupNavigationBarButtons()
         setupToolbarBarButtons()
     }
     
     @objc private func selectAllAction(_ sender: UIBarButtonItem){
-        print("select all")
-        
         if let count = presenter?.getCounterCount(){
             for row in 0..<count{
                 tbvCounter.selectRow(at: IndexPath(row: row, section: 0), animated: false, scrollPosition: .none)
@@ -128,8 +126,6 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func deselectAllAction(_ sender: UIBarButtonItem){
-        print("deselect all")
-        
         if let count = presenter?.getCounterCount(){
             for row in 0..<count{
                 tbvCounter.deselectRow(at: IndexPath(row: row, section: 0), animated: false)
@@ -140,8 +136,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func editAction(_ sender: UIBarButtonItem){
-        print("editar")
-        tbvCounter.isEditing = true
+        tbvCounter.setEditing(true, animated: true)
         setupNavigationBarButtons()
         setupToolbarBarButtons()
     }
@@ -151,9 +146,21 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func shareAction(_ sender: UIBarButtonItem){
-        print("share")
         if let indexPaths = tbvCounter.indexPathsForSelectedRows{
-            presenter?.shareCounter(indexPaths: indexPaths)
+            presenter?.shareCounters(indexPaths: indexPaths)
+        }
+    }
+    
+    @objc private func deleteAction(_ sender: UIBarButtonItem){
+        
+        if let indexPaths = tbvCounter.indexPathsForSelectedRows{
+            
+            let handler: ((UIAlertAction) -> Void) = {[weak self] action in
+                guard let welf = self else {return}
+                welf.presenter?.deleteCounters(indexPaths: indexPaths)
+            }
+            
+            presenter?.showDeleteAlert(itemsToDelete: indexPaths.count, handler: handler)
         }
     }
 
@@ -168,6 +175,20 @@ extension HomeViewController: HomeViewProtocol{
     func reloadData(){
         refreshControl.endRefreshing()
         tbvCounter.reloadData()
+    }
+    
+    func reloadDataAfterRemoveCounter(){
+        
+        if let indexPaths = tbvCounter.indexPathsForSelectedRows{
+            
+            presenter?.deletePersistentCounters(indexPaths: indexPaths)
+            tbvCounter.performBatchUpdates({
+                tbvCounter.deleteRows(at: indexPaths, with: .left)
+            }, completion: nil)
+            tbvCounter.setEditing(false, animated: true)
+            setupNavigationBarButtons()
+            setupToolbarBarButtons()
+        }
     }
 }
 

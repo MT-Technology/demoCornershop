@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HomePresenterProtocol {
     
     func loadCounters()
     func getCounterCount() -> Int
     func getCounterAtIndexPath(indexPath: IndexPath) -> Counter
-    func shareCounter(indexPaths: [IndexPath])
+    func shareCounters(indexPaths: [IndexPath])
+    func showDeleteAlert(itemsToDelete: Int, handler: ((UIAlertAction) -> Void)?)
+    func deleteCounters(indexPaths: [IndexPath])
+    func deletePersistentCounters(indexPaths: [IndexPath])
 }
 
 class HomePresenter{
@@ -23,12 +27,31 @@ class HomePresenter{
     private var router: HomeRouterProtocol
     
     private var counters: [Counter] = []
-    
+    private var idToDelete: [String] = []
     
     init (viewController: HomeViewController){
         self.view = viewController
         self.interactor = HomeInteractor()
         self.router = HomeRouter(viewController: viewController)
+    }
+    
+    func deleteCounter(){
+        
+        if idToDelete.count > 0,
+            let counterId = idToDelete.first{
+            
+            interactor.deleteCounter(counterId: counterId, success: { [weak self] in
+                guard let welf = self else {return}
+                welf.idToDelete.removeFirst()
+                if welf.idToDelete.count == 0{
+                    welf.view?.reloadDataAfterRemoveCounter()
+                }else{
+                    welf.deleteCounter()
+                }
+            }) { (error) in
+                
+            }
+        }
     }
 }
 
@@ -53,7 +76,7 @@ extension HomePresenter: HomePresenterProtocol{
         counters[indexPath.row]
     }
     
-    func shareCounter(indexPaths: [IndexPath]){
+    func shareCounters(indexPaths: [IndexPath]){
         
         var textArray: [String] = []
         for indexPath in indexPaths{
@@ -61,5 +84,21 @@ extension HomePresenter: HomePresenterProtocol{
         }
         let textToShare = textArray.joined(separator: ", ")
         router.routeToShare(textToShare: textToShare)
+    }
+    
+    func showDeleteAlert(itemsToDelete: Int, handler: ((UIAlertAction) -> Void)?){
+        router.routeToDeleteAlert(itemsToDelete: itemsToDelete, handler: handler)
+    }
+    
+    func deleteCounters(indexPaths: [IndexPath]){
+     
+        idToDelete = indexPaths.map({counters[$0.row].id})
+        deleteCounter()
+    }
+    
+    func deletePersistentCounters(indexPaths: [IndexPath]){
+        
+        let rows = indexPaths.map({$0.row}).sorted(by: {$0 > $1})
+        rows.forEach({counters.remove(at: $0)})
     }
 }
