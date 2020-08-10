@@ -10,6 +10,17 @@
 		1143D0BC89047C4A1973A2E4 /* Pods_DemoCornershop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F11A737AD7A5283BA42FB0 /* Pods_DemoCornershop.framework */; };
 		5FA962361CFBE2587D956442 /* Pods_DemoCornershop_DemoCornershopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B259B6D392A8BDF06D215223 /* Pods_DemoCornershop_DemoCornershopUITests.framework */; };
 		9A25773B24E0BFDC003A722B /* CornershopTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A25773A24E0BFDC003A722B /* CornershopTextField.swift */; };
+		9A304DF224E0ED510075457C /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304DF024E0ED510075457C /* ExampleViewController.swift */; };
+		9A304DF324E0ED510075457C /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A304DF124E0ED510075457C /* ExampleViewController.xib */; };
+		9A304DF524E0EFDD0075457C /* example.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A304DF424E0EFDD0075457C /* example.json */; };
+		9A304DF724E0F1360075457C /* ExampleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304DF624E0F1360075457C /* ExampleInteractor.swift */; };
+		9A304DF924E0F2630075457C /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304DF824E0F2630075457C /* Example.swift */; };
+		9A304DFB24E0F4810075457C /* ExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304DFA24E0F4810075457C /* ExamplePresenter.swift */; };
+		9A304DFF24E0F9A40075457C /* ExampleGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304DFD24E0F9A40075457C /* ExampleGroupCollectionViewCell.swift */; };
+		9A304E0024E0F9A40075457C /* ExampleGroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A304DFE24E0F9A40075457C /* ExampleGroupCollectionViewCell.xib */; };
+		9A304E0324E0FE9D0075457C /* ExampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304E0124E0FE9C0075457C /* ExampleCollectionViewCell.swift */; };
+		9A304E0424E0FE9D0075457C /* ExampleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A304E0224E0FE9D0075457C /* ExampleCollectionViewCell.xib */; };
+		9A304E0624E108FF0075457C /* ExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304E0524E108FF0075457C /* ExampleRouter.swift */; };
 		9A72D53024DE595700140343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D52F24DE595700140343 /* AppDelegate.swift */; };
 		9A72D53224DE595700140343 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53124DE595700140343 /* SceneDelegate.swift */; };
 		9A72D53A24DE595700140343 /* DemoCornershop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53824DE595700140343 /* DemoCornershop.xcdatamodeld */; };
@@ -75,6 +86,17 @@
 		4DF1EC372685B48D52C2A9C2 /* Pods-DemoCornershop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershop.debug.xcconfig"; path = "Target Support Files/Pods-DemoCornershop/Pods-DemoCornershop.debug.xcconfig"; sourceTree = "<group>"; };
 		7BBCDDF27059670CF935ED60 /* Pods_DemoCornershopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoCornershopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A25773A24E0BFDC003A722B /* CornershopTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornershopTextField.swift; sourceTree = "<group>"; };
+		9A304DF024E0ED510075457C /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		9A304DF124E0ED510075457C /* ExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleViewController.xib; sourceTree = "<group>"; };
+		9A304DF424E0EFDD0075457C /* example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = example.json; sourceTree = "<group>"; };
+		9A304DF624E0F1360075457C /* ExampleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleInteractor.swift; sourceTree = "<group>"; };
+		9A304DF824E0F2630075457C /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
+		9A304DFA24E0F4810075457C /* ExamplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenter.swift; sourceTree = "<group>"; };
+		9A304DFD24E0F9A40075457C /* ExampleGroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleGroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A304DFE24E0F9A40075457C /* ExampleGroupCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleGroupCollectionViewCell.xib; sourceTree = "<group>"; };
+		9A304E0124E0FE9C0075457C /* ExampleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A304E0224E0FE9D0075457C /* ExampleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleCollectionViewCell.xib; sourceTree = "<group>"; };
+		9A304E0524E108FF0075457C /* ExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouter.swift; sourceTree = "<group>"; };
 		9A72D52C24DE595700140343 /* DemoCornershop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCornershop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A72D52F24DE595700140343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A72D53124DE595700140343 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +181,72 @@
 				7BBCDDF27059670CF935ED60 /* Pods_DemoCornershopTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A304DE924E0ECDA0075457C /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				9A304DEE24E0ED330075457C /* View */,
+				9A304DEF24E0ED330075457C /* Interactor */,
+				9A304DEB24E0ED330075457C /* Presenter */,
+				9A304DED24E0ED330075457C /* Entity */,
+				9A304DEC24E0ED330075457C /* Router */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		9A304DEB24E0ED330075457C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9A304DFA24E0F4810075457C /* ExamplePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9A304DEC24E0ED330075457C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9A304E0524E108FF0075457C /* ExampleRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9A304DED24E0ED330075457C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9A304DF824E0F2630075457C /* Example.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9A304DEE24E0ED330075457C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A304DF024E0ED510075457C /* ExampleViewController.swift */,
+				9A304DF124E0ED510075457C /* ExampleViewController.xib */,
+				9A304DFC24E0F96F0075457C /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A304DEF24E0ED330075457C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9A304DF624E0F1360075457C /* ExampleInteractor.swift */,
+				9A304DF424E0EFDD0075457C /* example.json */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9A304DFC24E0F96F0075457C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9A304DFD24E0F9A40075457C /* ExampleGroupCollectionViewCell.swift */,
+				9A304DFE24E0F9A40075457C /* ExampleGroupCollectionViewCell.xib */,
+				9A304E0124E0FE9C0075457C /* ExampleCollectionViewCell.swift */,
+				9A304E0224E0FE9D0075457C /* ExampleCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		9A72D52324DE595700140343 = {
@@ -481,6 +569,7 @@
 				9A76AD8A24DE981D0048FD4E /* Home */,
 				9A8CC13624E07F0100321113 /* SearchResult */,
 				9A8CC14624E09B9D00321113 /* Create */,
+				9A304DE924E0ECDA0075457C /* Example */,
 			);
 			path = ModulesViper;
 			sourceTree = "<group>";
@@ -612,10 +701,14 @@
 				9ABC71BF24DE8AED0002DF48 /* FeatureTableViewCell.xib in Resources */,
 				9A8CC14124E07FBB00321113 /* SearchResultViewController.xib in Resources */,
 				9A8CC13124DF61C600321113 /* CounterTableViewCell.xib in Resources */,
+				9A304E0424E0FE9D0075457C /* ExampleCollectionViewCell.xib in Resources */,
+				9A304DF524E0EFDD0075457C /* example.json in Resources */,
 				9A8CC14F24E09BEE00321113 /* CreateViewController.xib in Resources */,
 				9A72D53C24DE595A00140343 /* Assets.xcassets in Resources */,
 				9A72D56624DE626600140343 /* WelcomeViewController.xib in Resources */,
 				9A8CC0E224DEFBBE00321113 /* HomeViewController.xib in Resources */,
+				9A304DF324E0ED510075457C /* ExampleViewController.xib in Resources */,
+				9A304E0024E0F9A40075457C /* ExampleGroupCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,12 +843,17 @@
 				9ABC71B424DE766E0002DF48 /* WelcomeInteractor.swift in Sources */,
 				9A8CC14324E0859C00321113 /* SearchResultPresenter.swift in Sources */,
 				9A8CC0E624DEFE3300321113 /* HomePresenter.swift in Sources */,
+				9A304DFB24E0F4810075457C /* ExamplePresenter.swift in Sources */,
 				9A8CC13024DF61C600321113 /* CounterTableViewCell.swift in Sources */,
 				9A8CC19624E0A5D600321113 /* CreatePresenter.swift in Sources */,
+				9A304DF724E0F1360075457C /* ExampleInteractor.swift in Sources */,
 				9ABC71BE24DE8AED0002DF48 /* FeatureTableViewCell.swift in Sources */,
 				9A8CC0E824DEFE5400321113 /* HomeRouter.swift in Sources */,
 				9A8CC14E24E09BEE00321113 /* CreateViewController.swift in Sources */,
 				9ABC71C624DE95630002DF48 /* CornershopButton.swift in Sources */,
+				9A304E0324E0FE9D0075457C /* ExampleCollectionViewCell.swift in Sources */,
+				9A304DFF24E0F9A40075457C /* ExampleGroupCollectionViewCell.swift in Sources */,
+				9A304DF924E0F2630075457C /* Example.swift in Sources */,
 				9A8CC19324E0A57D00321113 /* CreateRouter.swift in Sources */,
 				9A8CC12924DF5AD200321113 /* Counter.swift in Sources */,
 				9A72D56524DE626600140343 /* WelcomeViewController.swift in Sources */,
@@ -768,8 +866,10 @@
 				9ABC71C424DE94D30002DF48 /* CornershopView.swift in Sources */,
 				9A8CC0E124DEFBBE00321113 /* HomeViewController.swift in Sources */,
 				9ABC71C224DE8D500002DF48 /* extension+UIColor.swift in Sources */,
+				9A304DF224E0ED510075457C /* ExampleViewController.swift in Sources */,
 				9A8CC0E424DEFE0E00321113 /* HomeInteractor.swift in Sources */,
 				9A8CC14524E08FA800321113 /* SearchResultInteractor.swift in Sources */,
+				9A304E0624E108FF0075457C /* ExampleRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

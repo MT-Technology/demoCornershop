@@ -13,6 +13,7 @@ protocol CreateRouterProtocol {
     
     func back()
     func routeToConfirmAlert(name: String)
+    func routeToExamples()
 }
 
 class CreateRouter{
@@ -42,5 +43,12 @@ extension CreateRouter: CreateRouterProtocol{
         alert.addAction(dismissAction)
         viewController?.present(alert, animated: true, completion: nil)
         
+    }
+    
+    func routeToExamples(){
+        
+        let vc = ExampleViewController()
+        vc.delegate = viewController
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

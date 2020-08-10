@@ -66,7 +66,7 @@ class CreateViewController: UIViewController {
     }
     
     @objc private func labelTapAction(_ sender: UITapGestureRecognizer){
-        print("todo el label")
+        presenter?.goToExample()
     }
     
     @IBAction private func tapAction(_ sender: UITapGestureRecognizer){
@@ -92,5 +92,12 @@ extension CreateViewController: UITextFieldDelegate{
         view.endEditing(true)
         return true
     }
-    
 }
+
+extension CreateViewController: ExampleViewDelegate{
+    func exampleDidSelected(example: String) {
+        txtNameCounter.text = example
+        setupNavigationBarButtons()
+    }
+}
+

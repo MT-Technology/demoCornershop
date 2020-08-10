@@ -11,6 +11,7 @@ import Foundation
 protocol CreatePresenterProtocol: class {
     func back()
     func save(nameCounter: String)
+    func goToExample()
 }
 
 class CreatePresenter{
@@ -40,5 +41,9 @@ extension CreatePresenter: CreatePresenterProtocol{
             NotificationCenter.default.post(name: NSNotification.Name.init("updateCountersAfterCreated"), object: counters)
         }) { (error) in
         }
+    }
+    
+    func goToExample(){
+        router.routeToExamples()
     }
 }
