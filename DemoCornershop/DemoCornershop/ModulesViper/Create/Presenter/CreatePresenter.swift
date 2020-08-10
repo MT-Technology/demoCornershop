@@ -34,12 +34,17 @@ extension CreatePresenter: CreatePresenterProtocol{
     
     func save(nameCounter: String){
         
-        interactor.createCounter(name: nameCounter, success: { [weak self] (counters) in
-            guard let welf = self else {return}
-            welf.view?.stopLoading()
-            welf.router.routeToConfirmAlert(name: nameCounter)
-            NotificationCenter.default.post(name: NSNotification.Name.init("updateCountersAfterCreated"), object: counters)
-        }) { (error) in
+        if Reachability.isConnectedToNetwork() == false{
+            view?.stopLoading()
+            router.routeToNoInternetAlert()
+        }else{
+            interactor.createCounter(name: nameCounter, success: { [weak self] (counters) in
+                guard let welf = self else {return}
+                welf.view?.stopLoading()
+                welf.router.routeToConfirmAlert(name: nameCounter)
+                NotificationCenter.default.post(name: NSNotification.Name.init("updateCountersAfterCreated"), object: counters)
+            }) { (error) in
+            }
         }
     }
     

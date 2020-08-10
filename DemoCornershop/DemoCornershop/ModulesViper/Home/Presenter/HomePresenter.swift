@@ -139,13 +139,17 @@ extension HomePresenter: HomePresenterProtocol{
     }
     
     func showDeleteAlert(itemsToDelete: Int, handler: ((UIAlertAction) -> Void)?){
-        router.routeToDeleteAlert(itemsToDelete: itemsToDelete, handler: handler)
+        router.routeToDeleteActionSheet(itemsToDelete: itemsToDelete, handler: handler)
     }
     
     func deleteCounters(indexPaths: [IndexPath]){
      
-        idToDelete = indexPaths.map({counters[$0.row].id})
-        deleteCounter()
+        if Reachability.isConnectedToNetwork() == false{
+            router.routeToDeleteAlert()
+        }else{
+            idToDelete = indexPaths.map({counters[$0.row].id})
+            deleteCounter()
+        }
     }
     
     func deletePersistentCounters(indexPaths: [IndexPath]){

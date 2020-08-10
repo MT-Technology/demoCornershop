@@ -14,6 +14,7 @@ protocol CreateRouterProtocol {
     func back()
     func routeToConfirmAlert(name: String)
     func routeToExamples()
+    func routeToNoInternetAlert()
 }
 
 class CreateRouter{
@@ -50,5 +51,17 @@ extension CreateRouter: CreateRouterProtocol{
         let vc = ExampleViewController()
         vc.delegate = viewController
         viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func routeToNoInternetAlert(){
+        
+        let alert = UIAlertController(title: "Couldn’t create the counter", message: "The Internet connection appears to be offline.", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        cancelAction.setValue(UIColor(named: "darkYellowCornershop"), forKey: "titleTextColor")
+        alert.addAction(cancelAction)
+        
+        viewController?.present(alert, animated: true, completion: nil)
+        
     }
 }
