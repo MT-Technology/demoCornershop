@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultViewController" customModule="DemoCornershop" customModuleProvider="target">
             <connections>
+                <outlet property="lblNoResult" destination="Okx-hC-kmk" id="tKp-ft-qUt"/>
                 <outlet property="tbvCounter" destination="94u-MC-SUW" id="FKk-DJ-kvM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,12 +28,20 @@
                         <outlet property="dataSource" destination="-1" id="7UB-sy-J4v"/>
                     </connections>
                 </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okx-hC-kmk">
+                    <rect key="frame" x="163.5" y="436" width="87.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" name="darkGrayCornershop"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" name="grayCornershop"/>
             <constraints>
+                <constraint firstItem="Okx-hC-kmk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1hg-Wa-7og"/>
                 <constraint firstItem="94u-MC-SUW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="59g-8j-M7H"/>
                 <constraint firstItem="94u-MC-SUW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HMS-43-3cq"/>
                 <constraint firstItem="94u-MC-SUW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="TXu-JZ-Dg0"/>
+                <constraint firstItem="Okx-hC-kmk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aot-Cm-4hF"/>
                 <constraint firstItem="94u-MC-SUW" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="sux-yr-zX9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -40,6 +49,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="darkGrayCornershop">
+            <color red="0.53333333333333333" green="0.54509803921568623" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="darkYellowCornershop">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

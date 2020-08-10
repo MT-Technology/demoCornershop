@@ -21,6 +21,7 @@
 		9A304E0324E0FE9D0075457C /* ExampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304E0124E0FE9C0075457C /* ExampleCollectionViewCell.swift */; };
 		9A304E0424E0FE9D0075457C /* ExampleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A304E0224E0FE9D0075457C /* ExampleCollectionViewCell.xib */; };
 		9A304E0624E108FF0075457C /* ExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304E0524E108FF0075457C /* ExampleRouter.swift */; };
+		9A304E0824E12DF50075457C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304E0724E12DF50075457C /* Reachability.swift */; };
 		9A72D53024DE595700140343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D52F24DE595700140343 /* AppDelegate.swift */; };
 		9A72D53224DE595700140343 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53124DE595700140343 /* SceneDelegate.swift */; };
 		9A72D53A24DE595700140343 /* DemoCornershop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53824DE595700140343 /* DemoCornershop.xcdatamodeld */; };
@@ -97,6 +98,7 @@
 		9A304E0124E0FE9C0075457C /* ExampleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A304E0224E0FE9D0075457C /* ExampleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleCollectionViewCell.xib; sourceTree = "<group>"; };
 		9A304E0524E108FF0075457C /* ExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouter.swift; sourceTree = "<group>"; };
+		9A304E0724E12DF50075457C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		9A72D52C24DE595700140343 /* DemoCornershop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCornershop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A72D52F24DE595700140343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A72D53124DE595700140343 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		9A72D52E24DE595700140343 /* DemoCornershop */ = {
 			isa = PBXGroup;
 			children = (
+				9A304E0724E12DF50075457C /* Reachability.swift */,
 				9A8CC12A24DF5B5A00321113 /* Constants */,
 				9ABC71C024DE8D340002DF48 /* Extensions */,
 				9ABC71BA24DE899B0002DF48 /* CornershopUIKit */,
@@ -864,6 +867,7 @@
 				9A72D56E24DE71CE00140343 /* WelcomeRouter.swift in Sources */,
 				9A72D53A24DE595700140343 /* DemoCornershop.xcdatamodeld in Sources */,
 				9ABC71C424DE94D30002DF48 /* CornershopView.swift in Sources */,
+				9A304E0824E12DF50075457C /* Reachability.swift in Sources */,
 				9A8CC0E124DEFBBE00321113 /* HomeViewController.swift in Sources */,
 				9ABC71C224DE8D500002DF48 /* extension+UIColor.swift in Sources */,
 				9A304DF224E0ED510075457C /* ExampleViewController.swift in Sources */,

@@ -14,6 +14,7 @@ protocol HomeRouterProtocol {
     func routeToShare(textToShare: String)
     func routeToDeleteAlert(itemsToDelete: Int, handler: ((UIAlertAction) -> Void)?)
     func routeToCreate()
+    func routeToIncrementOrDecrementAlert(title: String, message: String, retryHandler: ((UIAlertAction) -> Void)?)
 }
 
 class HomeRouter{
@@ -42,8 +43,19 @@ extension HomeRouter: HomeRouterProtocol{
     }
     
     func routeToCreate(){
-        
         let vc = CreateViewController()
         viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func routeToIncrementOrDecrementAlert(title: String, message: String, retryHandler: ((UIAlertAction) -> Void)?){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let retryAction = UIAlertAction(title: "Retry", style: .cancel, handler: retryHandler)
+        let cancelAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        retryAction.setValue(UIColor(named: "darkYellowCornershop"), forKey: "titleTextColor")
+        cancelAction.setValue(UIColor(named: "darkYellowCornershop"), forKey: "titleTextColor")
+        alert.addAction(retryAction)
+        alert.addAction(cancelAction)
+        viewController?.present(alert, animated: true, completion: nil)
     }
 }

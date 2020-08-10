@@ -14,11 +14,16 @@ protocol HomeViewProtocol: class {
     func reloadDataAfterRemoveCounter()
     func reloadCell(indexPath: IndexPath)
     func reloadSection()
+    func noInternetConnection()
 }
 
 class HomeViewController: UIViewController {
 
     @IBOutlet private weak var tbvCounter: UITableView!
+    @IBOutlet private weak var aivLoading: UIActivityIndicatorView!
+    
+    @IBOutlet private weak var noDataView: UIView!
+    @IBOutlet private weak var noNetworkView: UIView!
     
     private var presenter: HomePresenterProtocol?
     lazy private var refreshControl: UIRefreshControl = {
@@ -26,7 +31,7 @@ class HomeViewController: UIViewController {
         let refresh = UIRefreshControl()
         refresh.backgroundColor = UIColor.clear
         refresh.tintColor = UIColor.black
-        refresh.addTarget(self, action: #selector(loadCounters), for: .valueChanged)
+        refresh.addTarget(self, action: #selector(refreshCounters), for: .valueChanged)
         return refresh
     }()
     
@@ -35,17 +40,15 @@ class HomeViewController: UIViewController {
 
         tbvCounter.register(UINib(nibName: "CounterTableViewCell", bundle: nil), forCellReuseIdentifier: CounterTableViewCell.identifier)
         tbvCounter.refreshControl = refreshControl
-    
         setupNavigationController()
         setupSearchBar()
         presenter = HomePresenter(viewController: self)
-        loadCounters()
+        load()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupToolbar()
-        
     }
     
     private func setupNavigationController(){
@@ -60,6 +63,7 @@ class HomeViewController: UIViewController {
         let searchController = UISearchController(searchResultsController: SearchResultViewController())
         searchController.searchResultsUpdater = self
         searchController.delegate = self
+        searchController.searchBar.isUserInteractionEnabled = (presenter?.getCounterCount() ?? 0) > 0
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -80,7 +84,9 @@ class HomeViewController: UIViewController {
                 navigationItem.rightBarButtonItems = [selectAllButton]
             }
         }else{
+            let count = presenter?.getCounterCount() ?? 0
             let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editAction(_:)))
+            editButton.isEnabled = count > 0
             navigationItem.leftBarButtonItems = [editButton]
             navigationItem.rightBarButtonItems = []
             
@@ -131,6 +137,19 @@ class HomeViewController: UIViewController {
                                 UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction(_:)))]
             }
         }
+    }
+    
+    private func setupInteractiveView(){
+        tbvCounter.isUserInteractionEnabled = (presenter?.getCounterCount() ?? 0) != 0
+        noDataView.isHidden = (presenter?.getCounterCount() ?? 0) != 0
+    }
+    
+    private func load(){
+        tbvCounter.isUserInteractionEnabled = false
+        noNetworkView.isHidden = true
+        noDataView.isHidden = true
+        aivLoading.startAnimating()
+        presenter?.loadCounters()
     }
     
     @objc private func doneAction(_ sender: UIBarButtonItem){
@@ -190,18 +209,29 @@ class HomeViewController: UIViewController {
         }
     }
 
-    @objc private func loadCounters(){
-        presenter?.loadCounters()
+    @objc private func refreshCounters(){
+        presenter?.refreshCounters()
     }
     
+    @IBAction private func createCounterAction(_ sender: UIButton){
+        presenter?.createCounter()
+    }
+    
+    @IBAction private func retryAction(_ sender: UIButton){
+        load()
+    }
 }
 
 extension HomeViewController: HomeViewProtocol{
     
     func reloadData(){
+        aivLoading.stopAnimating()
         refreshControl.endRefreshing()
         tbvCounter.reloadData()
+        setupNavigationBarButtons()
         setupToolbarBarButtons()
+        setupSearchBar()
+        setupInteractiveView()
     }
     
     func reloadDataAfterRemoveCounter(){
@@ -215,6 +245,8 @@ extension HomeViewController: HomeViewProtocol{
             tbvCounter.setEditing(false, animated: true)
             setupNavigationBarButtons()
             setupToolbarBarButtons()
+            setupSearchBar()
+            setupInteractiveView()
         }
     }
     
@@ -227,7 +259,21 @@ extension HomeViewController: HomeViewProtocol{
     func reloadSection(){
         
         tbvCounter.reloadSections(IndexSet(integer: 0), with: .none)
+        setupNavigationBarButtons()
         setupToolbarBarButtons()
+        setupSearchBar()
+        setupInteractiveView()
+    }
+    
+    func noInternetConnection(){
+        refreshControl.endRefreshing()
+        aivLoading.stopAnimating()
+        noDataView.isHidden = true
+        noNetworkView.isHidden = false
+        tbvCounter.reloadData()
+        setupNavigationBarButtons()
+        setupToolbarBarButtons()
+        setupSearchBar()
     }
 }
 

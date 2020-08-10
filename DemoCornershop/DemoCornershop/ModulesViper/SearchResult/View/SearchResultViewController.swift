@@ -16,6 +16,7 @@ protocol SearchResultViewProtocol: class {
 class SearchResultViewController: UIViewController {
 
     @IBOutlet private weak var tbvCounter: UITableView!
+    @IBOutlet private weak var lblNoResult: UILabel!
     
     private var presenter: SearchResultPresenterProtocol?
     
@@ -29,6 +30,7 @@ class SearchResultViewController: UIViewController {
     func setFilterResult(counters : [Counter]){
         presenter?.setFilterResult(counters: counters)
         tbvCounter.reloadData()
+        lblNoResult.isHidden = counters.count != 0
     }
 }
 

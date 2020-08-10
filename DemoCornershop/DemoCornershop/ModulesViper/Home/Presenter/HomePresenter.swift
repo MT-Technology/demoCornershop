@@ -12,6 +12,7 @@ import UIKit
 protocol HomePresenterProtocol {
     
     func loadCounters()
+    func refreshCounters()
     func getCounterCount() -> Int
     func getCounterItemCount() -> Int
     func getCounterAtIndexPath(indexPath: IndexPath) -> Counter
@@ -85,11 +86,31 @@ extension HomePresenter: HomePresenterProtocol{
     
     func loadCounters(){
         
-        interactor.getCounters(success: { [weak self] (counters) in
-            guard let welf = self else {return}
-            welf.counters = counters
-            welf.view?.reloadData()
-        }) { (error) in
+        if Reachability.isConnectedToNetwork() == false{
+            counters.removeAll()
+            view?.noInternetConnection()
+        }else{
+            interactor.getCounters(success: { [weak self] (counters) in
+                guard let welf = self else {return}
+                welf.counters = counters
+                welf.view?.reloadData()
+            }) {(error) in
+            }
+        }
+    }
+    
+    func refreshCounters(){
+        
+        if Reachability.isConnectedToNetwork() == false{
+            counters.removeAll()
+            view?.noInternetConnection()
+        }else{
+            interactor.getCounters(success: { [weak self] (counters) in
+                guard let welf = self else {return}
+                welf.counters = counters
+                welf.view?.reloadData()
+            }) {(error) in
+            }
         }
     }
     
@@ -134,22 +155,41 @@ extension HomePresenter: HomePresenterProtocol{
     }
     
     func didIncrementCount(indexPath: IndexPath){
-        let id = counters[indexPath.row].id
-        interactor.incrementCounter(counterId: id, success: { [weak self] counters in
-            guard let welf = self else {return}
-            welf.counters = counters
-            welf.view?.reloadCell(indexPath: indexPath)
-        }) { (error) in
+        
+        if Reachability.isConnectedToNetwork() == false{
+            
+            let title = "Couldn’t update  the \"\(counters[indexPath.row].title)\" counter to \(counters[indexPath.row].count + 1)"
+            let message = "The Internet connection appears to be offline."
+            router.routeToIncrementOrDecrementAlert(title: title, message: message) { [weak self](action) in
+                self?.didIncrementCount(indexPath: indexPath)
+            }
+        }else{
+            let id = counters[indexPath.row].id
+            interactor.incrementCounter(counterId: id, success: { [weak self] counters in
+                guard let welf = self else {return}
+                welf.counters = counters
+                welf.view?.reloadCell(indexPath: indexPath)
+            }) { (error) in
+            }
         }
     }
     
     func didDecrementCount(indexPath: IndexPath){
-        let id = counters[indexPath.row].id
-        interactor.decrementCounter(counterId: id, success: { [weak self] counters in
-            guard let welf = self else {return}
-            welf.counters = counters
-            welf.view?.reloadCell(indexPath: indexPath)
-        }) { (error) in
+        if Reachability.isConnectedToNetwork() == false{
+            
+            let title = "Couldn’t update  the \"\(counters[indexPath.row].title)\" counter to \(counters[indexPath.row].count + 1)"
+            let message = "The Internet connection appears to be offline."
+            router.routeToIncrementOrDecrementAlert(title: title, message: message) { [weak self](action) in
+                self?.didDecrementCount(indexPath: indexPath)
+            }
+        }else{
+            let id = counters[indexPath.row].id
+            interactor.decrementCounter(counterId: id, success: { [weak self] counters in
+                guard let welf = self else {return}
+                welf.counters = counters
+                welf.view?.reloadCell(indexPath: indexPath)
+            }) { (error) in
+            }
         }
     }
     
