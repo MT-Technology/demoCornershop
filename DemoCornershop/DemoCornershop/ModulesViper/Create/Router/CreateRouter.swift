@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CreateRouterProtocol {
     
     func back()
+    func routeToConfirmAlert(name: String)
 }
 
 class CreateRouter{
@@ -27,5 +29,18 @@ extension CreateRouter: CreateRouterProtocol{
     
     func back() {
         viewController?.navigationController?.popViewController(animated: true)
+    }
+    
+    func routeToConfirmAlert(name: String){
+        
+        let alert = UIAlertController(title: "Counter App", message: "Your \"\(name)\" counter has been created", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "dismiss", style: .cancel) { [weak self](action) in
+            guard let welf = self else {return}
+            welf.back()
+        }
+        dismissAction.setValue(UIColor(named: "darkYellowCornershop"), forKey: "titleTextColor")
+        alert.addAction(dismissAction)
+        viewController?.present(alert, animated: true, completion: nil)
+        
     }
 }

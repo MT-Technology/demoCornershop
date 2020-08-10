@@ -10,6 +10,7 @@ import Foundation
 
 protocol CreatePresenterProtocol: class {
     func back()
+    func save(nameCounter: String)
 }
 
 class CreatePresenter{
@@ -28,5 +29,16 @@ extension CreatePresenter: CreatePresenterProtocol{
     
     func back(){
         router.back()
+    }
+    
+    func save(nameCounter: String){
+        
+        interactor.createCounter(name: nameCounter, success: { [weak self] (counters) in
+            guard let welf = self else {return}
+            welf.view?.stopLoading()
+            welf.router.routeToConfirmAlert(name: nameCounter)
+            NotificationCenter.default.post(name: NSNotification.Name.init("updateCountersAfterCreated"), object: counters)
+        }) { (error) in
+        }
     }
 }

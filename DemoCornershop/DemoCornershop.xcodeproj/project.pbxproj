@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1143D0BC89047C4A1973A2E4 /* Pods_DemoCornershop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F11A737AD7A5283BA42FB0 /* Pods_DemoCornershop.framework */; };
 		5FA962361CFBE2587D956442 /* Pods_DemoCornershop_DemoCornershopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B259B6D392A8BDF06D215223 /* Pods_DemoCornershop_DemoCornershopUITests.framework */; };
+		9A25773B24E0BFDC003A722B /* CornershopTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A25773A24E0BFDC003A722B /* CornershopTextField.swift */; };
 		9A72D53024DE595700140343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D52F24DE595700140343 /* AppDelegate.swift */; };
 		9A72D53224DE595700140343 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53124DE595700140343 /* SceneDelegate.swift */; };
 		9A72D53A24DE595700140343 /* DemoCornershop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A72D53824DE595700140343 /* DemoCornershop.xcdatamodeld */; };
@@ -73,6 +74,7 @@
 		21B89CA4DC3DB9BB806F7728 /* Pods-DemoCornershopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershopTests.debug.xcconfig"; path = "Target Support Files/Pods-DemoCornershopTests/Pods-DemoCornershopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DF1EC372685B48D52C2A9C2 /* Pods-DemoCornershop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershop.debug.xcconfig"; path = "Target Support Files/Pods-DemoCornershop/Pods-DemoCornershop.debug.xcconfig"; sourceTree = "<group>"; };
 		7BBCDDF27059670CF935ED60 /* Pods_DemoCornershopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoCornershopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A25773A24E0BFDC003A722B /* CornershopTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornershopTextField.swift; sourceTree = "<group>"; };
 		9A72D52C24DE595700140343 /* DemoCornershop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCornershop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A72D52F24DE595700140343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A72D53124DE595700140343 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			children = (
 				9ABC71C324DE94D30002DF48 /* CornershopView.swift */,
 				9ABC71C524DE95630002DF48 /* CornershopButton.swift */,
+				9A25773A24E0BFDC003A722B /* CornershopTextField.swift */,
 			);
 			path = CornershopUIKit;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				9A8CC19324E0A57D00321113 /* CreateRouter.swift in Sources */,
 				9A8CC12924DF5AD200321113 /* Counter.swift in Sources */,
 				9A72D56524DE626600140343 /* WelcomeViewController.swift in Sources */,
+				9A25773B24E0BFDC003A722B /* CornershopTextField.swift in Sources */,
 				9ABC71B924DE87CA0002DF48 /* Feature.swift in Sources */,
 				9A8CC12C24DF5BF500321113 /* WebServiceUrl.swift in Sources */,
 				9A72D53224DE595700140343 /* SceneDelegate.swift in Sources */,

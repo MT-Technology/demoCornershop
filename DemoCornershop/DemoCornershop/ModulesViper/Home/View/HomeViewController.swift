@@ -13,6 +13,7 @@ protocol HomeViewProtocol: class {
     func reloadData()
     func reloadDataAfterRemoveCounter()
     func reloadCell(indexPath: IndexPath)
+    func reloadSection()
 }
 
 class HomeViewController: UIViewController {
@@ -220,6 +221,12 @@ extension HomeViewController: HomeViewProtocol{
     func reloadCell(indexPath: IndexPath){
         
         tbvCounter.reloadRows(at: [indexPath], with: .none)
+        setupToolbarBarButtons()
+    }
+    
+    func reloadSection(){
+        
+        tbvCounter.reloadSections(IndexSet(integer: 0), with: .none)
         setupToolbarBarButtons()
     }
 }

@@ -13,12 +13,11 @@ protocol HomeInteractorProtocol {
     
     func getCounters(success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ error : Error)-> Void)
     func deleteCounter(counterId: String, success: @escaping ()-> Void, failure: @escaping (_ error : Error)-> Void)
-    func incrementCounter(counterId: String, success: @escaping (_ count: Int)-> Void, failure: @escaping (_ error : Error)-> Void)
-    func decrementCounter(counterId: String, success: @escaping (_ count: Int)-> Void, failure: @escaping (_ error : Error)-> Void)
+    func incrementCounter(counterId: String, success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ error : Error)-> Void)
+    func decrementCounter(counterId: String, success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ error : Error)-> Void)
 }
 
 class HomeInteractor{
-    
 }
 
 extension HomeInteractor: HomeInteractorProtocol{
@@ -28,8 +27,7 @@ extension HomeInteractor: HomeInteractorProtocol{
             if response.status == .success,
                 let countersUnparsed = response.response as? [[String: Any]]{
                 success(countersUnparsed.map({Counter(json: $0)}))
-            }else{
-                
+            }else{   
             }
         }
     }
@@ -43,24 +41,22 @@ extension HomeInteractor: HomeInteractorProtocol{
         }
     }
     
-    func incrementCounter(counterId: String, success: @escaping (_ count: Int)-> Void, failure: @escaping (_ error : Error)-> Void){
+    func incrementCounter(counterId: String, success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ error : Error)-> Void){
         let param = ["id": counterId]
         MTWebServiceManager.shared.request.postRequest(urlString: WebServiceUrl.incrementCounter, parameters: param) { (response) in
             if response.status == .success,
-                let countersUnparsed = response.response as? [[String: Any]],
-                let counter = countersUnparsed.map({Counter(json: $0)}).first(where: {$0.id == counterId}){
-                success(counter.count)
+                let countersUnparsed = response.response as? [[String: Any]]{
+                success(countersUnparsed.map({Counter(json: $0)}))
             }
         }
     }
     
-    func decrementCounter(counterId: String, success: @escaping (_ count: Int)-> Void, failure: @escaping (_ error : Error)-> Void){
+    func decrementCounter(counterId: String, success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ error : Error)-> Void){
         let param = ["id": counterId]
         MTWebServiceManager.shared.request.postRequest(urlString: WebServiceUrl.decrementCounter, parameters: param) { (response) in
             if response.status == .success,
-                let countersUnparsed = response.response as? [[String: Any]],
-                let counter = countersUnparsed.map({Counter(json: $0)}).first(where: {$0.id == counterId}){
-                success(counter.count)
+                let countersUnparsed = response.response as? [[String: Any]]{
+                success(countersUnparsed.map({Counter(json: $0)}))
             }
         }
     }

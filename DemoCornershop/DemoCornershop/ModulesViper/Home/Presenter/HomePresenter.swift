@@ -41,6 +41,16 @@ class HomePresenter{
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateCounterFromResultSearchResult(notification:)),
                                                name: NSNotification.Name.init("updateCounterFromSearchResult"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCountersAfterCreated(notification:)),
+                                               name: NSNotification.Name.init("updateCountersAfterCreated"), object: nil)
+    }
+    
+    @objc private func updateCountersAfterCreated(notification : Notification){
+    
+        if let counters = notification.object as? [Counter]{
+            self.counters = counters
+            view?.reloadSection()
+        }
     }
     
     @objc private func updateCounterFromResultSearchResult(notification : Notification){
@@ -125,9 +135,9 @@ extension HomePresenter: HomePresenterProtocol{
     
     func didIncrementCount(indexPath: IndexPath){
         let id = counters[indexPath.row].id
-        interactor.incrementCounter(counterId: id, success: { [weak self] count in
+        interactor.incrementCounter(counterId: id, success: { [weak self] counters in
             guard let welf = self else {return}
-            welf.counters[indexPath.row].count = count
+            welf.counters = counters
             welf.view?.reloadCell(indexPath: indexPath)
         }) { (error) in
         }
@@ -135,9 +145,9 @@ extension HomePresenter: HomePresenterProtocol{
     
     func didDecrementCount(indexPath: IndexPath){
         let id = counters[indexPath.row].id
-        interactor.decrementCounter(counterId: id, success: { [weak self] count in
+        interactor.decrementCounter(counterId: id, success: { [weak self] counters in
             guard let welf = self else {return}
-            welf.counters[indexPath.row].count = count
+            welf.counters = counters
             welf.view?.reloadCell(indexPath: indexPath)
         }) { (error) in
         }
