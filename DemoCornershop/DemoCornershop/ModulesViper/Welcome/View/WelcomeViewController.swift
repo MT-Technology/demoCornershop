@@ -33,7 +33,9 @@ class WelcomeViewController: UIViewController {
     
     private func setTitle(){
         
-        let attr = NSMutableAttributedString(string: "Welcome to\nCounters", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 33.0, weight: .heavy)])
+        let attr = NSMutableAttributedString(string: "Welcome to\nCounters",
+                                             attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 33.0, weight: .heavy),
+                                                          NSAttributedString.Key.foregroundColor: UIColor.black])
         
         attr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "darkYellowCornershop") ?? .black , range: attr.mutableString.range(of: "Counters", options: .caseInsensitive))
         
