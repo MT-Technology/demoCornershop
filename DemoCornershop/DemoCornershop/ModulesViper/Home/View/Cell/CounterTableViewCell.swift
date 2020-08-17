@@ -46,7 +46,7 @@ class CounterTableViewCell: UITableViewCell {
         lblTitle.text = counter.title
         stpCount.value = Double(counter.count)
         count = counter.count
-        lblCount.textColor = count == 0 ? UIColor(named: "grayCornershop") : UIColor(named: "darkYellowCornershop")
+        lblCount.textColor = count == 0 ? Color.gray : Color.darkYellow
     }
     
     @IBAction private func countChangedAction(_ sender: UIStepper){

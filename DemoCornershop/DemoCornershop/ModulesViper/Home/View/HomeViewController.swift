@@ -11,6 +11,7 @@ import UIKit
 protocol HomeViewProtocol: class {
     
     func reloadData()
+    func stopLoading()
     func reloadDataAfterRemoveCounter()
     func reloadCell(indexPath: IndexPath)
     func reloadSection()
@@ -38,7 +39,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tbvCounter.register(UINib(nibName: "CounterTableViewCell", bundle: nil), forCellReuseIdentifier: CounterTableViewCell.identifier)
+        tbvCounter.register(UINib(nibName: NibName.Cell.counterTableViewCell, bundle: nil), forCellReuseIdentifier: CounterTableViewCell.identifier)
         tbvCounter.refreshControl = refreshControl
         setupNavigationController()
         setupSearchBar()
@@ -52,8 +53,8 @@ class HomeViewController: UIViewController {
     }
     
     private func setupNavigationController(){
-        title = "Counters"
-        navigationController?.navigationBar.tintColor = UIColor(named: "darkYellowCornershop") ?? .black
+        title = Message.Home.title
+        navigationController?.navigationBar.tintColor = Color.darkYellow
         navigationController?.navigationBar.isHidden = false
         setupNavigationBarButtons()
     }
@@ -71,32 +72,30 @@ class HomeViewController: UIViewController {
     private func setupNavigationBarButtons(){
         
         if tbvCounter.isEditing{
-            let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneAction(_:)))
+            let doneButton = UIBarButtonItem(title: Message.Home.BarButtonText.done, style: .plain, target: self, action: #selector(doneAction(_:)))
             navigationItem.leftBarButtonItems = [doneButton]
             
             if let count = presenter?.getCounterCount(),
                 let indexPaths = tbvCounter.indexPathsForSelectedRows,
                 count == indexPaths.count{
-                let deselectAllButton = UIBarButtonItem(title: "Deselect All", style: .plain, target: self, action: #selector(deselectAllAction(_:)))
+                let deselectAllButton = UIBarButtonItem(title: Message.Home.BarButtonText.deselectAll, style: .plain, target: self, action: #selector(deselectAllAction(_:)))
                 navigationItem.rightBarButtonItems = [deselectAllButton]
             }else{
-                let selectAllButton = UIBarButtonItem(title: "Select All", style: .plain, target: self, action: #selector(selectAllAction(_:)))
+                let selectAllButton = UIBarButtonItem(title: Message.Home.BarButtonText.selectAll, style: .plain, target: self, action: #selector(selectAllAction(_:)))
                 navigationItem.rightBarButtonItems = [selectAllButton]
             }
         }else{
             let count = presenter?.getCounterCount() ?? 0
-            let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editAction(_:)))
+            let editButton = UIBarButtonItem(title: Message.Home.BarButtonText.edit, style: .plain, target: self, action: #selector(editAction(_:)))
             editButton.isEnabled = count > 0
             navigationItem.leftBarButtonItems = [editButton]
             navigationItem.rightBarButtonItems = []
-            
         }
-        
     }
     
     private func setupToolbar(){
         navigationController?.isToolbarHidden = false
-        navigationController?.toolbar.tintColor = UIColor(named: "darkYellowCornershop") ?? .black
+        navigationController?.toolbar.tintColor = Color.darkYellow
         setupToolbarBarButtons()
     }
     private func setupToolbarBarButtons(){
@@ -123,9 +122,9 @@ class HomeViewController: UIViewController {
                 let times = presenter?.getCounterItemCount(){
                 
                 let label = UILabel()
-                label.text = "\(count) items · Counted \(times) times"
-                label.font = UIFont(name: "SFProDisplay-Medium", size: 15)
-                label.textColor = UIColor(named: "darkGrayCornershop") ?? .black
+                label.text = Message.Home.footerTitle(numberOfItems: count, nomberOfCounts: times)
+                label.font = Font.SFProDisplay.Medium._15
+                label.textColor = Color.darkGray
                 
                 toolbarItems = [UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
                                 UIBarButtonItem(customView: label),
@@ -225,13 +224,17 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewProtocol{
     
     func reloadData(){
+        stopLoading()
+        setupInteractiveView()
+    }
+    
+    func stopLoading(){
         aivLoading.stopAnimating()
         refreshControl.endRefreshing()
         tbvCounter.reloadData()
         setupNavigationBarButtons()
         setupToolbarBarButtons()
         setupSearchBar()
-        setupInteractiveView()
     }
     
     func reloadDataAfterRemoveCounter(){

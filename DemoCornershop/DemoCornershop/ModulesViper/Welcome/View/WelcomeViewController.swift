@@ -18,6 +18,8 @@ class WelcomeViewController: UIViewController {
     @IBOutlet private weak var lblTitle: UILabel!
     @IBOutlet private weak var tbvFeatures: UITableView!
     @IBOutlet private weak var btnContinue: UIButton!
+    @IBOutlet private weak var tbvFeatureHeightConstraint: NSLayoutConstraint!
+    private var observer : NSKeyValueObservation?
     
     private var presenter: WelcomePresenterProtocol?
 
@@ -25,7 +27,13 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = true
-        tbvFeatures.register(UINib(nibName: "FeatureTableViewCell", bundle: nil), forCellReuseIdentifier: FeatureTableViewCell.identifier)
+        tbvFeatures.register(UINib(nibName: NibName.Cell.featureTableViewCell, bundle: nil), forCellReuseIdentifier: FeatureTableViewCell.identifier)
+        
+        
+        observer = observe(\.tbvFeatures.contentSize, options: [.new], changeHandler: { (object, change) in
+            self.tbvFeatureHeightConstraint.constant = change.newValue?.height ?? 0.0
+        })
+        
         setTitle()
         presenter = WelcomePresenter(viewController: self)
         presenter?.loadContent()
@@ -33,11 +41,11 @@ class WelcomeViewController: UIViewController {
     
     private func setTitle(){
         
-        let attr = NSMutableAttributedString(string: "Welcome to\nCounters",
+        let attr = NSMutableAttributedString(string: Message.Welcome.title,
                                              attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 33.0, weight: .heavy),
                                                           NSAttributedString.Key.foregroundColor: UIColor.black])
         
-        attr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "darkYellowCornershop") ?? .black , range: attr.mutableString.range(of: "Counters", options: .caseInsensitive))
+        attr.addAttribute(NSAttributedString.Key.foregroundColor, value: Color.darkYellow , range: attr.mutableString.range(of: Message.Welcome.titleOrange, options: .caseInsensitive))
         
         lblTitle.attributedText = attr
     }

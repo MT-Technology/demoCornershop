@@ -1,16 +1,14 @@
-{
-    "data" : [
-        {
-            "title" : "Gaseoasas",
-            "data": ["Coca-cola","Inka cola","Pepsi","Fanta","Guaraná","Concordia"]
-        },
-        {
-            "title" : "Postres",
-            "data": ["Torta tres leches","Mil hojas","Alfajores","Suspiro a la limeña","Cheesecake de sauco","Arroz con leche","Mazamorra"]
-        },
-        {
-            "title" : "Comidas",
-            "data": ["Ají de gallina","Tallarines verdes","Lomo saltado","Ceviche","Seco de carne","Cau cau de pollo"]
-        }
-    ]
-}
+[
+    {
+        "title" : "Gaseoasas",
+        "data": ["Coca-cola","Inka cola","Pepsi","Fanta","Guaraná","Concordia"]
+    },
+    {
+        "title" : "Postres",
+        "data": ["Torta tres leches","Mil hojas","Alfajores","Suspiro a la limeña","Cheesecake de sauco","Arroz con leche","Mazamorra"]
+    },
+    {
+        "title" : "Comidas",
+        "data": ["Ají de gallina","Tallarines verdes","Lomo saltado","Ceviche","Seco de carne","Cau cau de pollo"]
+    }
+]

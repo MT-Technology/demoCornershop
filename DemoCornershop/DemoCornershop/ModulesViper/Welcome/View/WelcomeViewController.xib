@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="btnContinue" destination="rRb-1o-dOQ" id="udc-67-Ot3"/>
                 <outlet property="lblTitle" destination="G35-uJ-qtb" id="FbP-sl-kVb"/>
+                <outlet property="tbvFeatureHeightConstraint" destination="Cmb-3Z-4dX" id="qdn-6p-KxP"/>
                 <outlet property="tbvFeatures" destination="tgw-FR-ZKq" id="q5y-HJ-kkc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,28 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to\nCounters" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G35-uJ-qtb">
-                    <rect key="frame" x="40" y="114" width="175.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An example app that syncs to a Node.js server running on your Mac." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3x-Zn-mvb">
-                    <rect key="frame" x="40" y="154.5" width="334" height="41"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tgw-FR-ZKq">
-                    <rect key="frame" x="40" y="235.5" width="334" height="489.5"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="L8N-LM-8sc"/>
-                        <outlet property="delegate" destination="-1" id="XN4-L5-M9H"/>
-                    </connections>
-                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRb-1o-dOQ" customClass="CornershopButton" customModule="DemoCornershop" customModuleProvider="target">
-                    <rect key="frame" x="40" y="765" width="334" height="57"/>
+                    <rect key="frame" x="40" y="785" width="334" height="57"/>
                     <color key="backgroundColor" name="darkYellowCornershop"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="57" id="VGz-QN-aww"/>
@@ -60,24 +41,70 @@
                         <action selector="btnContinueAction:" destination="-1" eventType="touchUpInside" id="VRg-vv-2G7"/>
                     </connections>
                 </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrn-p3-R83">
+                    <rect key="frame" x="0.0" y="44" width="414" height="721"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHx-tv-hqO">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="SsX-Eb-CKE"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to\nCounters" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G35-uJ-qtb">
+                            <rect key="frame" x="40" y="70" width="334" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An example app that syncs to a Node.js server running on your Mac." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3x-Zn-mvb">
+                            <rect key="frame" x="40" y="106.5" width="334" height="41"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tgw-FR-ZKq">
+                            <rect key="frame" x="40" y="167.5" width="334" height="214"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="214" id="Cmb-3Z-4dX"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="L8N-LM-8sc"/>
+                                <outlet property="delegate" destination="-1" id="XN4-L5-M9H"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Y3x-Zn-mvb" secondAttribute="trailing" constant="40" id="7Tr-pr-Wtf"/>
+                        <constraint firstItem="Y3x-Zn-mvb" firstAttribute="top" secondItem="G35-uJ-qtb" secondAttribute="bottom" constant="16" id="Cfe-HY-wbL"/>
+                        <constraint firstItem="tgw-FR-ZKq" firstAttribute="leading" secondItem="Lrn-p3-R83" secondAttribute="leading" constant="40" id="D1k-mg-7lq"/>
+                        <constraint firstItem="tgw-FR-ZKq" firstAttribute="top" secondItem="Y3x-Zn-mvb" secondAttribute="bottom" constant="20" id="Dq5-Go-5AS"/>
+                        <constraint firstAttribute="bottom" secondItem="tgw-FR-ZKq" secondAttribute="bottom" id="Jst-sm-ej0"/>
+                        <constraint firstItem="G35-uJ-qtb" firstAttribute="top" secondItem="NHx-tv-hqO" secondAttribute="bottom" constant="70" id="PYU-LN-Sic"/>
+                        <constraint firstAttribute="trailing" secondItem="tgw-FR-ZKq" secondAttribute="trailing" constant="40" id="V1T-h7-MlD"/>
+                        <constraint firstItem="NHx-tv-hqO" firstAttribute="top" secondItem="Lrn-p3-R83" secondAttribute="top" id="XJB-Pn-jXJ"/>
+                        <constraint firstAttribute="trailing" secondItem="NHx-tv-hqO" secondAttribute="trailing" id="YsY-HX-qEu"/>
+                        <constraint firstItem="G35-uJ-qtb" firstAttribute="leading" secondItem="Lrn-p3-R83" secondAttribute="leading" constant="40" id="gSa-S4-iQI"/>
+                        <constraint firstItem="NHx-tv-hqO" firstAttribute="width" secondItem="Lrn-p3-R83" secondAttribute="width" id="jZn-tL-7MD"/>
+                        <constraint firstItem="Y3x-Zn-mvb" firstAttribute="leading" secondItem="Lrn-p3-R83" secondAttribute="leading" constant="40" id="kbF-68-yrG"/>
+                        <constraint firstAttribute="trailing" secondItem="G35-uJ-qtb" secondAttribute="trailing" constant="40" id="qL3-1T-v64"/>
+                        <constraint firstItem="NHx-tv-hqO" firstAttribute="leading" secondItem="Lrn-p3-R83" secondAttribute="leading" id="rr5-tB-4W8"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" name="grayCornershop"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rRb-1o-dOQ" secondAttribute="trailing" constant="40" id="0bk-Fn-i4T"/>
-                <constraint firstItem="G35-uJ-qtb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="0tB-ce-UCO"/>
-                <constraint firstItem="Y3x-Zn-mvb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="8NA-8D-Die"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tgw-FR-ZKq" secondAttribute="trailing" constant="40" id="K3T-yi-9hY"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Y3x-Zn-mvb" secondAttribute="trailing" constant="40" id="M5M-VA-YSn"/>
-                <constraint firstItem="Y3x-Zn-mvb" firstAttribute="top" secondItem="G35-uJ-qtb" secondAttribute="bottom" constant="20" id="QAu-sv-c1R"/>
-                <constraint firstItem="tgw-FR-ZKq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="TsL-8j-GtD"/>
-                <constraint firstItem="tgw-FR-ZKq" firstAttribute="top" secondItem="Y3x-Zn-mvb" secondAttribute="bottom" constant="40" id="V3w-RE-HXF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rRb-1o-dOQ" secondAttribute="bottom" constant="40" id="aZp-dr-3fh"/>
-                <constraint firstItem="rRb-1o-dOQ" firstAttribute="top" secondItem="tgw-FR-ZKq" secondAttribute="bottom" constant="40" id="fwS-2t-DMy"/>
+                <constraint firstItem="Lrn-p3-R83" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Hi6-Ne-nsA"/>
+                <constraint firstItem="Lrn-p3-R83" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Rnc-Ca-Owb"/>
+                <constraint firstItem="rRb-1o-dOQ" firstAttribute="top" secondItem="Lrn-p3-R83" secondAttribute="bottom" constant="20" id="VjO-ed-BBn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rRb-1o-dOQ" secondAttribute="bottom" constant="20" id="aZp-dr-3fh"/>
+                <constraint firstItem="Lrn-p3-R83" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bee-II-xAu"/>
                 <constraint firstItem="rRb-1o-dOQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="ktc-5A-mRX"/>
-                <constraint firstItem="G35-uJ-qtb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="slc-7W-7Fd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="101"/>
+            <point key="canvasLocation" x="130.43478260869566" y="99.776785714285708"/>
         </view>
     </objects>
     <resources>

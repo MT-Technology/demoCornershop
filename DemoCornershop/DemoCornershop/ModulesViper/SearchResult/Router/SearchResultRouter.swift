@@ -1,43 +1,30 @@
 //
-//  CreateRouter.swift
+//  SearchResultRouter.swift
 //  DemoCornershop
 //
-//  Created by Everis on 8/9/20.
+//  Created by Everis on 8/16/20.
 //  Copyright © 2020 Everis. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-protocol CreateRouterProtocol {
+protocol SearchResultRouterProtocol {
     
-    func back()
-    func routeToExamples()
     func routeToAlert(title: String, message: String, retryHandler: ((UIAlertAction) -> Void)?, dismissHandler: ((UIAlertAction) -> Void)?)
     func routeToAlert(title: String, message: String, dismissHandler: ((UIAlertAction) -> Void)?)
 }
 
-class CreateRouter{
+class SearchResultRouter{
     
-    private weak var viewController: CreateViewController?
+    private weak var viewController: SearchResultViewController?
     
-    init(viewController : CreateViewController) {
+    init(viewController: SearchResultViewController) {
         self.viewController = viewController
     }
 }
 
-extension CreateRouter: CreateRouterProtocol{
-    
-    func back() {
-        viewController?.navigationController?.popViewController(animated: true)
-    }
-    
-    func routeToExamples(){
-        
-        let vc = ExampleViewController()
-        vc.delegate = viewController
-        viewController?.navigationController?.pushViewController(vc, animated: true)
-    }
+extension SearchResultRouter: SearchResultRouterProtocol{
     
     func routeToAlert(title: String, message: String, retryHandler: ((UIAlertAction) -> Void)?, dismissHandler: ((UIAlertAction) -> Void)?){
         let alert = UIAlertController.createAlert(title: title, message: message, retryHandler: retryHandler, dismissHandler: dismissHandler)
@@ -49,3 +36,4 @@ extension CreateRouter: CreateRouterProtocol{
         viewController?.present(alert, animated: true, completion: nil)
     }
 }
+

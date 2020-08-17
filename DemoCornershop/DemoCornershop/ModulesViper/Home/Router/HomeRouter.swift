@@ -13,9 +13,9 @@ protocol HomeRouterProtocol {
 
     func routeToShare(textToShare: String)
     func routeToDeleteActionSheet(itemsToDelete: Int, handler: ((UIAlertAction) -> Void)?)
-    func routeToCreate()
-    func routeToIncrementOrDecrementAlert(title: String, message: String, retryHandler: ((UIAlertAction) -> Void)?)
-    func routeToDeleteAlert()
+    func routeToCreate()    
+    func routeToAlert(title: String, message: String, retryHandler: ((UIAlertAction) -> Void)?, dismissHandler: ((UIAlertAction) -> Void)?)
+    func routeToAlert(title: String, message: String, dismissHandler: ((UIAlertAction) -> Void)?)
 }
 
 class HomeRouter{
@@ -37,8 +37,8 @@ extension HomeRouter: HomeRouterProtocol{
     func routeToDeleteActionSheet(itemsToDelete: Int, handler: ((UIAlertAction) -> Void)?){
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Delete \(itemsToDelete) counter", style: .destructive, handler: handler))
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        cancelAction.setValue(UIColor(named: "darkYellowCornershop"), forKey: "titleTextColor")
+        let cancelAction = UIAlertAction(title: Message.Alert.ButtonName.cancel, style: .cancel, handler: nil)
+        cancelAction.setCornershopStyle()
         alert.addAction(cancelAction)
         viewController?.present(alert, animated: true, completion: nil)
     }
@@ -47,27 +47,14 @@ extension HomeRouter: HomeRouterProtocol{
         let vc = CreateViewController()
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func routeToIncrementOrDecrementAlert(title: String, message: String, retryHandler: ((UIAlertAction) -> Void)?){
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let retryAction = UIAlertAction(title: "Retry", style: .cancel, handler: retryHandler)
-        let cancelAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
-        retryAction.setValue(UIColor(named: "darkYellowCornershop"), forKey: "titleTextColor")
-        cancelAction.setValue(UIColor(named: "darkYellowCornershop"), forKey: "titleTextColor")
-        alert.addAction(retryAction)
-        alert.addAction(cancelAction)
+    func routeToAlert(title: String, message: String, retryHandler: ((UIAlertAction) -> Void)?, dismissHandler: ((UIAlertAction) -> Void)?){
+        let alert = UIAlertController.createAlert(title: title, message: message, retryHandler: retryHandler, dismissHandler: dismissHandler)
         viewController?.present(alert, animated: true, completion: nil)
     }
     
-    func routeToDeleteAlert(){
-        
-        let alert = UIAlertController(title: "Couldn’t delete the counter", message: "The Internet connection appears to be offline.", preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
-        cancelAction.setValue(UIColor(named: "darkYellowCornershop"), forKey: "titleTextColor")
-        alert.addAction(cancelAction)
-        
+    func routeToAlert(title: String, message: String, dismissHandler: ((UIAlertAction) -> Void)?){
+        let alert = UIAlertController.createAlert(title: title, message: message, dismissHandler: dismissHandler)
         viewController?.present(alert, animated: true, completion: nil)
     }
 }

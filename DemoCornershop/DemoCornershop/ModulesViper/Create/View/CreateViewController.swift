@@ -30,8 +30,8 @@ class CreateViewController: UIViewController {
     }
     
     private func setupExampleLabel(){
-        let attr = NSMutableAttributedString(string: "Give it a name. Creative block? See examples.", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15.0, weight: .regular)])
-        attr.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue , range: attr.mutableString.range(of: "examples", options: .caseInsensitive))
+        let attr = NSMutableAttributedString(string: Message.Create.disclaimer, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15.0, weight: .regular)])
+        attr.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue , range: attr.mutableString.range(of: Message.Create.disclaimerUnderline, options: .caseInsensitive))
         lblExample.attributedText = attr
         lblExample.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(labelTapAction(_:)))
@@ -39,7 +39,7 @@ class CreateViewController: UIViewController {
     }
     
     private func setupNavigation(){
-        title = "Create a counter"
+        title = Message.Create.title
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.isToolbarHidden = true
         setupNavigationBarButtons()
@@ -47,10 +47,10 @@ class CreateViewController: UIViewController {
     
     private func setupNavigationBarButtons(){
         
-        let editButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(backAction(_:)))
-        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveAction(_:)))
+        let cancelButton = UIBarButtonItem(title: Message.Create.BarButtonText.cancel, style: .plain, target: self, action: #selector(backAction(_:)))
+        let saveButton = UIBarButtonItem(title: Message.Create.BarButtonText.save, style: .plain, target: self, action: #selector(saveAction(_:)))
         saveButton.isEnabled = !(txtNameCounter.text?.isEmpty ?? true)
-        navigationItem.leftBarButtonItems = [editButton]
+        navigationItem.leftBarButtonItems = [cancelButton]
         navigationItem.rightBarButtonItems = [saveButton]
     }
     

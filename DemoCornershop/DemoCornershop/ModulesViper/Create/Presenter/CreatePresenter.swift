@@ -36,14 +36,24 @@ extension CreatePresenter: CreatePresenterProtocol{
         
         if Reachability.isConnectedToNetwork() == false{
             view?.stopLoading()
-            router.routeToNoInternetAlert()
+            router.routeToAlert(title: Message.Alert.Title.errorToCreateCounter, message: Message.Alert.ErrorMessage.notInternetConnection, retryHandler: { [weak self](action) in
+                self?.save(nameCounter: nameCounter)
+            }, dismissHandler: nil)
         }else{
             interactor.createCounter(name: nameCounter, success: { [weak self] (counters) in
                 guard let welf = self else {return}
                 welf.view?.stopLoading()
-                welf.router.routeToConfirmAlert(name: nameCounter)
-                NotificationCenter.default.post(name: NSNotification.Name.init("updateCountersAfterCreated"), object: counters)
-            }) { (error) in
+                welf.router.routeToAlert(title: Message.Alert.Title.appName, message: Message.Alert.ErrorMessage.createCounterSuccess(name: nameCounter)) { [weak self] (action) in
+                    self?.back()
+                }
+                NotificationCenter.default.post(name: NSNotification.Name.updateCountersAfterCreated, object: counters)
+            }) { [weak self] (error) in
+                guard let welf = self else {return}
+                welf.router.routeToAlert(title: Message.Alert.Title.errorToCreateCounter, message: error, retryHandler: { [weak self](action) in
+                    self?.save(nameCounter: nameCounter)
+                }) { [weak self] (action) in
+                    self?.view?.stopLoading()
+                }
             }
         }
     }

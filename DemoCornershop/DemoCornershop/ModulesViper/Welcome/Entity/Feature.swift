@@ -8,19 +8,17 @@
 
 import Foundation
 
-
-struct Feature {
+struct Feature: Codable {
 
     let title: String
     let body: String
     let imageName: String
     let hexaColor: String
     
-    init(json: [String:Any]) {
-        
-        title = json["title"] as? String ?? ""
-        body = json["body"] as? String ?? ""
-        imageName = json["image"] as? String ?? ""
-        hexaColor = json["color"] as? String ?? ""
+    enum CodingKeys: String, CodingKey {
+        case title
+        case body
+        case imageName = "image"
+        case hexaColor = "color"
     }
 }

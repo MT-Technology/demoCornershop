@@ -23,12 +23,9 @@ extension ExampleInteractor: ExampleInteractorProtocol{
         
         if let path = Bundle.main.path(forResource: "example", ofType: "json"),
             let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe),
-            let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? [String:Any],
-            let exampleUnparsed = jsonResult["data"] as? [[String:Any]]{
-            let examples : [Example] = exampleUnparsed.map({Example(json: $0)})
+            let examples = try? JSONDecoder().decode([Example].self, from: data){
             return examples
         }
-        
         return []
     }
 }

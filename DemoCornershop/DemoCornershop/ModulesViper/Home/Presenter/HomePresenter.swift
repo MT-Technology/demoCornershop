@@ -41,9 +41,9 @@ class HomePresenter{
         router = HomeRouter(viewController: viewController)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateCounterFromResultSearchResult(notification:)),
-                                               name: NSNotification.Name.init("updateCounterFromSearchResult"), object: nil)
+                                               name: Notification.Name.updateCounterFromSearchResult, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateCountersAfterCreated(notification:)),
-                                               name: NSNotification.Name.init("updateCountersAfterCreated"), object: nil)
+                                               name: NSNotification.Name.updateCountersAfterCreated, object: nil)
     }
     
     @objc private func updateCountersAfterCreated(notification : Notification){
@@ -76,7 +76,12 @@ class HomePresenter{
                 }else{
                     welf.deleteCounter()
                 }
-            }) { (error) in
+            }) { [weak self] (error) in
+                
+                guard let welf = self else {return}
+                welf.router.routeToAlert(title: Message.Alert.Title.errorToDeleteCounter, message: error, retryHandler: { [weak self](action) in
+                    self?.deleteCounter()
+                }, dismissHandler: nil)
             }
         }
     }
@@ -94,7 +99,13 @@ extension HomePresenter: HomePresenterProtocol{
                 guard let welf = self else {return}
                 welf.counters = counters
                 welf.view?.reloadData()
-            }) {(error) in
+            }) {[weak self] (error)  in
+                guard let welf = self else {return}
+                welf.router.routeToAlert(title: Message.Alert.Title.errorToLoadCounter, message: error, retryHandler: { [weak self](action) in
+                    self?.loadCounters()
+                }) { [weak self](action) in
+                    self?.view?.stopLoading()
+                }
             }
         }
     }
@@ -109,7 +120,11 @@ extension HomePresenter: HomePresenterProtocol{
                 guard let welf = self else {return}
                 welf.counters = counters
                 welf.view?.reloadData()
-            }) {(error) in
+            }) {[weak self] (error)  in
+                guard let welf = self else {return}
+                welf.router.routeToAlert(title: Message.Alert.Title.errorToLoadCounter, message: error) { [weak self](action) in
+                    self?.view?.stopLoading()
+                }
             }
         }
     }
@@ -145,7 +160,7 @@ extension HomePresenter: HomePresenterProtocol{
     func deleteCounters(indexPaths: [IndexPath]){
      
         if Reachability.isConnectedToNetwork() == false{
-            router.routeToDeleteAlert()
+            router.routeToAlert(title: Message.Alert.Title.errorToDeleteCounter, message: Message.Alert.ErrorMessage.notInternetConnection, dismissHandler: nil)
         }else{
             idToDelete = indexPaths.map({counters[$0.row].id})
             deleteCounter()
@@ -162,18 +177,20 @@ extension HomePresenter: HomePresenterProtocol{
         
         if Reachability.isConnectedToNetwork() == false{
             
-            let title = "Couldn’t update  the \"\(counters[indexPath.row].title)\" counter to \(counters[indexPath.row].count + 1)"
-            let message = "The Internet connection appears to be offline."
-            router.routeToIncrementOrDecrementAlert(title: title, message: message) { [weak self](action) in
+            router.routeToAlert(title: Message.Alert.Title.errorToUpdateCounter(counterName: counters[indexPath.row].title, count: counters[indexPath.row].count + 1), message: Message.Alert.ErrorMessage.notInternetConnection, retryHandler: { [weak self](action) in
                 self?.didIncrementCount(indexPath: indexPath)
-            }
+            }, dismissHandler: nil)
         }else{
             let id = counters[indexPath.row].id
             interactor.incrementCounter(counterId: id, success: { [weak self] counters in
                 guard let welf = self else {return}
                 welf.counters = counters
                 welf.view?.reloadCell(indexPath: indexPath)
-            }) { (error) in
+            }) { [weak self] (error) in
+                guard let welf = self else {return}
+                welf.router.routeToAlert(title: Message.Alert.Title.errorToUpdateCounter(counterName: welf.counters[indexPath.row].title, count: welf.counters[indexPath.row].count + 1), message: error, retryHandler: { [weak self](action) in
+                    self?.didIncrementCount(indexPath: indexPath)
+                }, dismissHandler: nil)
             }
         }
     }
@@ -181,18 +198,20 @@ extension HomePresenter: HomePresenterProtocol{
     func didDecrementCount(indexPath: IndexPath){
         if Reachability.isConnectedToNetwork() == false{
             
-            let title = "Couldn’t update  the \"\(counters[indexPath.row].title)\" counter to \(counters[indexPath.row].count + 1)"
-            let message = "The Internet connection appears to be offline."
-            router.routeToIncrementOrDecrementAlert(title: title, message: message) { [weak self](action) in
+            router.routeToAlert(title: Message.Alert.Title.errorToUpdateCounter(counterName: counters[indexPath.row].title, count: counters[indexPath.row].count - 1), message: Message.Alert.ErrorMessage.notInternetConnection, retryHandler: { [weak self](action) in
                 self?.didDecrementCount(indexPath: indexPath)
-            }
+            }, dismissHandler: nil)
         }else{
             let id = counters[indexPath.row].id
             interactor.decrementCounter(counterId: id, success: { [weak self] counters in
                 guard let welf = self else {return}
                 welf.counters = counters
                 welf.view?.reloadCell(indexPath: indexPath)
-            }) { (error) in
+            }){ [weak self] (error) in
+                guard let welf = self else {return}
+                welf.router.routeToAlert(title: Message.Alert.Title.errorToUpdateCounter(counterName: welf.counters[indexPath.row].title, count: welf.counters[indexPath.row].count - 1), message: error, retryHandler: { [weak self](action) in
+                    self?.didDecrementCount(indexPath: indexPath)
+                }, dismissHandler: nil)
             }
         }
     }

@@ -11,7 +11,7 @@ import MTWebServiceManager
 
 protocol CreateInteractorProtocol : class{
     
-    func createCounter(name: String, success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ error : Error)-> Void)
+    func createCounter(name: String, success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ errorMessage : String)-> Void)
 }
 
 class CreateInteractor{
@@ -21,15 +21,16 @@ class CreateInteractor{
 
 extension CreateInteractor: CreateInteractorProtocol{
 
-    func createCounter(name: String, success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ error : Error)-> Void){
+    func createCounter(name: String, success: @escaping (_ counters: [Counter])-> Void, failure: @escaping (_ errorMessage : String)-> Void){
         
         let param = ["title" : name]
         MTWebServiceManager.shared.request.postRequest(urlString: WebServiceUrl.createCounter, parameters: param) { (response) in
             if response.status == .success,
-                let countersUnparsed = response.response as? [[String: Any]]{
-                success(countersUnparsed.map({Counter(json: $0)}))
+                let data = response.responseData,
+                let counters = try? JSONDecoder().decode([Counter].self, from: data){
+                success(counters)
             }else{
-                
+                failure(response.errorMessage)
             }
         }
     }

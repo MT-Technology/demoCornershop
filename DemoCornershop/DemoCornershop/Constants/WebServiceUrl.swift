@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct WebServiceUrl {
     
     private static let baseUrl = "http://localhost:3000/api/v1/"

@@ -8,19 +8,12 @@
 
 import Foundation
 
-struct Counter {
+struct Counter: Codable {
     
     let id: String
     var count: Int
     let title: String
-    
-    init(json: [String:Any]) {
         
-        id = json["id"] as? String ?? ""
-        count = json["count"] as? Int ?? 0
-        title = json["title"] as? String ?? ""
-    }
-    
     func getTextToShare()->String{
         return "\(count) x \(title)"
     }

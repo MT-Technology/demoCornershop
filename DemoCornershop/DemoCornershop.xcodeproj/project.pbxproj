@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		1143D0BC89047C4A1973A2E4 /* Pods_DemoCornershop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F11A737AD7A5283BA42FB0 /* Pods_DemoCornershop.framework */; };
 		5FA962361CFBE2587D956442 /* Pods_DemoCornershop_DemoCornershopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B259B6D392A8BDF06D215223 /* Pods_DemoCornershop_DemoCornershopUITests.framework */; };
+		9A114EA224EA2137007A7860 /* SearchResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A114EA124EA2137007A7860 /* SearchResultRouter.swift */; };
+		9A114EA424EA599D007A7860 /* XibNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A114EA324EA599D007A7860 /* XibNames.swift */; };
+		9A114EA624EA5B30007A7860 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A114EA524EA5B30007A7860 /* Color.swift */; };
+		9A114EA824EA5E69007A7860 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A114EA724EA5E69007A7860 /* Message.swift */; };
+		9A114EAA24EA62B2007A7860 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A114EA924EA62B2007A7860 /* Font.swift */; };
+		9A114EAC24EA640D007A7860 /* extension+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A114EAB24EA640D007A7860 /* extension+NotificationName.swift */; };
+		9A114EAE24EA692B007A7860 /* extension+UIAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A114EAD24EA692B007A7860 /* extension+UIAlertAction.swift */; };
+		9A114EB024EA78EB007A7860 /* extension+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A114EAF24EA78EB007A7860 /* extension+UIAlertController.swift */; };
 		9A25773B24E0BFDC003A722B /* CornershopTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A25773A24E0BFDC003A722B /* CornershopTextField.swift */; };
 		9A304DF224E0ED510075457C /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A304DF024E0ED510075457C /* ExampleViewController.swift */; };
 		9A304DF324E0ED510075457C /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A304DF124E0ED510075457C /* ExampleViewController.xib */; };
@@ -86,6 +94,14 @@
 		21B89CA4DC3DB9BB806F7728 /* Pods-DemoCornershopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershopTests.debug.xcconfig"; path = "Target Support Files/Pods-DemoCornershopTests/Pods-DemoCornershopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DF1EC372685B48D52C2A9C2 /* Pods-DemoCornershop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoCornershop.debug.xcconfig"; path = "Target Support Files/Pods-DemoCornershop/Pods-DemoCornershop.debug.xcconfig"; sourceTree = "<group>"; };
 		7BBCDDF27059670CF935ED60 /* Pods_DemoCornershopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoCornershopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A114EA124EA2137007A7860 /* SearchResultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRouter.swift; sourceTree = "<group>"; };
+		9A114EA324EA599D007A7860 /* XibNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibNames.swift; sourceTree = "<group>"; };
+		9A114EA524EA5B30007A7860 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9A114EA724EA5E69007A7860 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9A114EA924EA62B2007A7860 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		9A114EAB24EA640D007A7860 /* extension+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+NotificationName.swift"; sourceTree = "<group>"; };
+		9A114EAD24EA692B007A7860 /* extension+UIAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIAlertAction.swift"; sourceTree = "<group>"; };
+		9A114EAF24EA78EB007A7860 /* extension+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIAlertController.swift"; sourceTree = "<group>"; };
 		9A25773A24E0BFDC003A722B /* CornershopTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornershopTextField.swift; sourceTree = "<group>"; };
 		9A304DF024E0ED510075457C /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		9A304DF124E0ED510075457C /* ExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleViewController.xib; sourceTree = "<group>"; };
@@ -422,6 +438,10 @@
 			isa = PBXGroup;
 			children = (
 				9A8CC12B24DF5BF500321113 /* WebServiceUrl.swift */,
+				9A114EA324EA599D007A7860 /* XibNames.swift */,
+				9A114EA524EA5B30007A7860 /* Color.swift */,
+				9A114EA724EA5E69007A7860 /* Message.swift */,
+				9A114EA924EA62B2007A7860 /* Font.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -450,6 +470,7 @@
 		9A8CC13724E07F5B00321113 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				9A114EA124EA2137007A7860 /* SearchResultRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -561,6 +582,9 @@
 			isa = PBXGroup;
 			children = (
 				9ABC71C124DE8D500002DF48 /* extension+UIColor.swift */,
+				9A114EAB24EA640D007A7860 /* extension+NotificationName.swift */,
+				9A114EAD24EA692B007A7860 /* extension+UIAlertAction.swift */,
+				9A114EAF24EA78EB007A7860 /* extension+UIAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -844,17 +868,23 @@
 				9A72D57024DE734500140343 /* WelcomePresenter.swift in Sources */,
 				9A8CC14024E07FBB00321113 /* SearchResultViewController.swift in Sources */,
 				9ABC71B424DE766E0002DF48 /* WelcomeInteractor.swift in Sources */,
+				9A114EAC24EA640D007A7860 /* extension+NotificationName.swift in Sources */,
 				9A8CC14324E0859C00321113 /* SearchResultPresenter.swift in Sources */,
 				9A8CC0E624DEFE3300321113 /* HomePresenter.swift in Sources */,
 				9A304DFB24E0F4810075457C /* ExamplePresenter.swift in Sources */,
 				9A8CC13024DF61C600321113 /* CounterTableViewCell.swift in Sources */,
+				9A114EA824EA5E69007A7860 /* Message.swift in Sources */,
+				9A114EB024EA78EB007A7860 /* extension+UIAlertController.swift in Sources */,
 				9A8CC19624E0A5D600321113 /* CreatePresenter.swift in Sources */,
 				9A304DF724E0F1360075457C /* ExampleInteractor.swift in Sources */,
+				9A114EAA24EA62B2007A7860 /* Font.swift in Sources */,
+				9A114EA624EA5B30007A7860 /* Color.swift in Sources */,
 				9ABC71BE24DE8AED0002DF48 /* FeatureTableViewCell.swift in Sources */,
 				9A8CC0E824DEFE5400321113 /* HomeRouter.swift in Sources */,
 				9A8CC14E24E09BEE00321113 /* CreateViewController.swift in Sources */,
 				9ABC71C624DE95630002DF48 /* CornershopButton.swift in Sources */,
 				9A304E0324E0FE9D0075457C /* ExampleCollectionViewCell.swift in Sources */,
+				9A114EA424EA599D007A7860 /* XibNames.swift in Sources */,
 				9A304DFF24E0F9A40075457C /* ExampleGroupCollectionViewCell.swift in Sources */,
 				9A304DF924E0F2630075457C /* Example.swift in Sources */,
 				9A8CC19324E0A57D00321113 /* CreateRouter.swift in Sources */,
@@ -870,8 +900,10 @@
 				9A304E0824E12DF50075457C /* Reachability.swift in Sources */,
 				9A8CC0E124DEFBBE00321113 /* HomeViewController.swift in Sources */,
 				9ABC71C224DE8D500002DF48 /* extension+UIColor.swift in Sources */,
+				9A114EAE24EA692B007A7860 /* extension+UIAlertAction.swift in Sources */,
 				9A304DF224E0ED510075457C /* ExampleViewController.swift in Sources */,
 				9A8CC0E424DEFE0E00321113 /* HomeInteractor.swift in Sources */,
+				9A114EA224EA2137007A7860 /* SearchResultRouter.swift in Sources */,
 				9A8CC14524E08FA800321113 /* SearchResultInteractor.swift in Sources */,
 				9A304E0624E108FF0075457C /* ExampleRouter.swift in Sources */,
 			);
@@ -1040,6 +1072,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3633CS8NU3;
 				INFOPLIST_FILE = DemoCornershop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1059,6 +1092,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3633CS8NU3;
 				INFOPLIST_FILE = DemoCornershop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1079,6 +1113,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3633CS8NU3;
 				INFOPLIST_FILE = DemoCornershopTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1101,6 +1136,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3633CS8NU3;
 				INFOPLIST_FILE = DemoCornershopTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1122,6 +1158,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3633CS8NU3;
 				INFOPLIST_FILE = DemoCornershopUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1142,6 +1179,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3633CS8NU3;
 				INFOPLIST_FILE = DemoCornershopUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

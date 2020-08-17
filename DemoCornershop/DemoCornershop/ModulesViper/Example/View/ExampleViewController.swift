@@ -26,7 +26,7 @@ class ExampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        clvExample.register(UINib(nibName: "ExampleGroupCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ExampleGroupCollectionViewCell.identifier)
+        clvExample.register(UINib(nibName: NibName.Cell.exampleGroupCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: ExampleGroupCollectionViewCell.identifier)
         presenter = ExamplePresenter(viewController: self)
         presenter?.loadContent()
     }

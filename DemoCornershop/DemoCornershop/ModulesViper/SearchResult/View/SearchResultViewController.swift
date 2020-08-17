@@ -23,7 +23,7 @@ class SearchResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tbvCounter.register(UINib(nibName: "CounterTableViewCell", bundle: nil), forCellReuseIdentifier: CounterTableViewCell.identifier)
+        tbvCounter.register(UINib(nibName: NibName.Cell.counterTableViewCell, bundle: nil), forCellReuseIdentifier: CounterTableViewCell.identifier)
         presenter = SearchResultPresenter(viewController: self)
     }
     

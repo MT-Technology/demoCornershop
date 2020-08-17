@@ -27,7 +27,7 @@ class ExampleGroupCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        clvOption.register(UINib(nibName: "ExampleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ExampleCollectionViewCell.identifier)
+        clvOption.register(UINib(nibName: NibName.Cell.exampleCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: ExampleCollectionViewCell.identifier)
     }
     
     func buildCell(example: Example, delegate: ExampleGroupCollectionViewCellProtocol?){

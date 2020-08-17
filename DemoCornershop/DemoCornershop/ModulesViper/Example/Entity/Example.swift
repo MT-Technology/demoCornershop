@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Example {
+struct Example: Codable {
     
     let name: String
     let options: [String]
     
-    init(json: [String:Any]) {
-        
-        name = json["title"] as? String ?? ""
-        options = json["data"] as? [String] ?? []
+    enum CodingKeys: String, CodingKey {
+        case name = "title"
+        case options = "data"
     }
+
 }
