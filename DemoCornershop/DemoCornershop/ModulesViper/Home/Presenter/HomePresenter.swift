@@ -112,23 +112,20 @@ extension HomePresenter: HomePresenterProtocol{
     
     func refreshCounters(){
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            if Reachability.isConnectedToNetwork() == false{
-                self.counters.removeAll()
-                self.view?.noInternetConnection()
-            }else{
-                self.interactor.getCounters(success: { [weak self] (counters) in
-                    guard let welf = self else {return}
-                    welf.counters = counters
-                    welf.view?.reloadData()
-                }) {[weak self] (error)  in
-                    guard let welf = self else {return}
-                    welf.view?.stopLoading()
-                    welf.router.routeToAlert(title: Message.Alert.Title.errorToLoadCounter, message: error, dismissHandler: nil)
-                }
+        if Reachability.isConnectedToNetwork() == false{
+            counters.removeAll()
+            view?.noInternetConnection()
+        }else{
+            interactor.getCounters(success: { [weak self] (counters) in
+                guard let welf = self else {return}
+                welf.counters = counters
+                welf.view?.reloadData()
+            }) {[weak self] (error)  in
+                guard let welf = self else {return}
+                welf.view?.stopLoading()
+                welf.router.routeToAlert(title: Message.Alert.Title.errorToLoadCounter, message: error, dismissHandler: nil)
             }
         }
-        
     }
     
     func getCounterCount() -> Int{
