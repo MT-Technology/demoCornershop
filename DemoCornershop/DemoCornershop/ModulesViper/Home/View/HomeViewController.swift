@@ -64,7 +64,7 @@ class HomeViewController: UIViewController {
         let searchController = UISearchController(searchResultsController: SearchResultViewController())
         searchController.searchResultsUpdater = self
         searchController.delegate = self
-        searchController.searchBar.isUserInteractionEnabled = (presenter?.getCounterCount() ?? 0) > 0
+//        searchController.searchBar.isUserInteractionEnabled = (presenter?.getCounterCount() ?? 0) > 0
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -144,7 +144,7 @@ class HomeViewController: UIViewController {
     }
     
     private func load(){
-        tbvCounter.isUserInteractionEnabled = false
+//        tbvCounter.isUserInteractionEnabled = false
         noNetworkView.isHidden = true
         noDataView.isHidden = true
         aivLoading.startAnimating()
@@ -209,6 +209,8 @@ class HomeViewController: UIViewController {
     }
 
     @objc private func refreshCounters(){
+        tbvCounter.refreshControl?.beginRefreshing()
+        
         presenter?.refreshCounters()
     }
     
